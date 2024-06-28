@@ -1,13 +1,19 @@
 {
-  "name": "@lc/hooks-vue",
-  "version": "0.0.1",
+  "name": "@lichang666/utils",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "scripts": {},
-  "keywords": [],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "lc",
+    "utils",
+    "typescript",
+    "ts"
+  ],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue": "^3.4.31"
-  }
+  "license": "ISC"
 }
