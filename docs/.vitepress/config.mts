@@ -18,7 +18,10 @@ export default defineConfig({
       },
       {
         text: '函数列表',
-        items: [{ text: 'getRandomColor', link: '/utils/get-random-color' }]
+        items: [
+          { text: 'getRandomColor', link: '/utils/get-random-color' },
+          { text: 'copyTxt', link: '/utils/copy-txt' }
+        ]
       }
     ],
     socialLinks: [
