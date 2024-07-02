@@ -4,9 +4,17 @@ outline: deep
 
 # copyTxt
 
-将指定文本`string`复制到剪贴板
+将指定文本复制到剪贴板
 
 ### 基础用法
+
+#### 参数
+
+仅仅接受一个`string`要复制的文本
+
+#### 返回值
+
+返回一个`Promise`对象
 
 ```ts
 import { copyTxt } from '@lichang666/utils'
@@ -26,17 +34,18 @@ copyTxt('hello world') // 复制文本
     const inputValue = ref('')
     const copyHandler = () => {
         if(inputValue.value === '') return
-        copyTxt(inputValue.value).then(()=>{
-            copyStatus.value = '已复制'
-            setTimeout(()=>{
-                copyStatus.value = '复制'
-            },1000)
-        }).catch(()=>{
-            copyStatus.value = '复制失败'
-            setTimeout(()=>{
-                copyStatus.value = '复制'
-            },1000)
-        })
+        copyTxt(inputValue.value)
+      .then(() => {
+        copyStatus.value = '已复制'
+      })
+      .catch(() => {
+        copyStatus.value = '复制失败'
+      })
+      .finally(() => {
+        setTimeout(() => {
+          copyStatus.value = '复制'
+        }, 1000)
+      })
     }
 </script>
 
@@ -63,7 +72,6 @@ copyTxt('hello world') // 复制文本
 
 <script setup lang="ts">
   import { copyTxt } from '@lichang666/utils'
-  import { ref } from 'vue'
   const copyStatus = ref('复制')
   const inputValue = ref('')
   const copyHandler = () => {
@@ -71,12 +79,11 @@ copyTxt('hello world') // 复制文本
     copyTxt(inputValue.value)
       .then(() => {
         copyStatus.value = '已复制'
-        setTimeout(() => {
-          copyStatus.value = '复制'
-        }, 1000)
       })
       .catch(() => {
         copyStatus.value = '复制失败'
+      })
+      .finally(() => {
         setTimeout(() => {
           copyStatus.value = '复制'
         }, 1000)
