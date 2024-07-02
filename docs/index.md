@@ -12,7 +12,7 @@ hero:
       link: /getting-started
     - theme: brand
       text: 函数列表
-      link: /get-random-color
+      link: /utils/get-random-color
 
 features:
   - title: TypeScript编写
