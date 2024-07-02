@@ -17,7 +17,7 @@ export default defineConfig({
         items: [{ text: '快速开始', link: '/getting-started' }]
       },
       {
-        text: '函数列表',
+        text: '通用函数',
         items: [
           { text: 'getRandomColor', link: '/utils/get-random-color' },
           { text: 'copyTxt', link: '/utils/copy-txt' },
