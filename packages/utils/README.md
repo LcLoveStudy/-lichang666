@@ -1,16 +1,16 @@
 # @lichang666/utils
 
-本库使用<span style="padding:2px 5px;border-radius:3px;background-color:blue;color:white">Typescript</span>编写，集成一些常用的工具函数
+This repository is code by<span style="padding:2px 5px;border-radius:3px;background-color:blue;color:white">Typescript</span>,some commonly used tool functions.
 
-### 安装
+### install
 
 ```bash
 pnpm install @lichang666/utils
 ```
 
-### 使用
+### usage
 
-更推荐使用<span style="padding:2px 5px;border-radius:3px;background-color:#ccc;color:red">pnpm</span>作为包管理器
+It's more recommended to use<span style="padding:2px 5px;border-radius:3px;background-color:#ccc;color:red">pnpm</span> as the package manager.
 
 ```ts
 import { getRandomColor } from '@lichang666/utils'
