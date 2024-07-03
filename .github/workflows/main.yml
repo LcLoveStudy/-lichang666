@@ -1,0 +1,43 @@
+name: doc-utils
+
+on:
+  push:
+    branches:
+      - doc-utils
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+          
+      - name: Inter Doc folder
+        run: cd ./docs/doc-utils
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run docs:build
+  
+      - name: Preview
+        run: pnpm run docs:preview
+        
+      - name: Inter Dist Folder
+        run: cd ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.vue3 }} # 此处修改为你的Secret名称
+          publish_dir: ./dist
