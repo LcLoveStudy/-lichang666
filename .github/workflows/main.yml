@@ -25,10 +25,10 @@ jobs:
         run: pnpm doc-utils:build
         
       - name: Inter Dist Folder
-        run: cd ./docs/doc-utils/.vitepress/dist
+        run: cd ./docs/doc-utils/.vitepress && mv ./dist ../../../
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.lichang666 }} # 此处修改为你的Secret名称
-          publish_dir: ./docs/doc-utils/.vitepress/dist
+          publish_dir: ./dist
