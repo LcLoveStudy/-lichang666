@@ -1,0 +1,19 @@
+{
+  "name": "@lichang666/utils-docs",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "docs:dev": "vitepress dev ./",
+    "docs:build": "vitepress build ./",
+    "docs:preview": "vitepress preview ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.2.3"
+  },
+  "dependencies": {
+    "@lichang666/utils": "workspace:^"
+  }
+}
