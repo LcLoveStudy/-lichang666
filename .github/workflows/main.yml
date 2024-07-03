@@ -21,17 +21,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm doc-utils:install
-
-      - name: Inter Doc Folder
-        run: cd ./docs/doc-utils
-
-      - name: Build
-        run: pnpm run docs:build
-  
-      - name: Preview
-        run: pnpm run docs:preview
+      - name: Install dependencies and Build
+        run: pnpm doc-utils:build
         
       - name: Inter Dist Folder
         run: cd ./dist
