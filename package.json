@@ -4,6 +4,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "doc-utils:install":"cd ./docs/doc-utils && pnpm install"
+  },
   "dependencies": {
     "prettier": "^3.3.2"
   }

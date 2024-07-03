@@ -21,11 +21,11 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Inter Doc folder
-        run: cd ./docs/doc-utils
-
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm doc-utils:install
+
+      - name: Inter Doc Folder
+        run: cd ./docs/doc-utils
 
       - name: Build
         run: pnpm run docs:build
