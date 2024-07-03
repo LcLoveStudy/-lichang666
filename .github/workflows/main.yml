@@ -17,15 +17,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 20
-          
-      - name: Inter Doc folder
-        run: cd ./docs/doc-utils
 
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Inter Doc folder and Install dependencies
+        run: cd ./docs/doc-utils
+             pnpm install
 
       - name: Build
         run: pnpm run docs:build
