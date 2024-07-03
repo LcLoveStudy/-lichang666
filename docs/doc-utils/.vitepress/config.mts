@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base:'./',
   outDir: './dist',
   title: '@lichang666/utils',
   description: '一个基于TypeScript开发的常用函数工具库',
