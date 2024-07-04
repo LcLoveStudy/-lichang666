@@ -1,6 +1,10 @@
 # @lichang666/utils
 
-This repository is code by<span style="padding:2px 5px;border-radius:3px;background-color:blue;color:white">Typescript</span>,some commonly used tool functions.
+This repository is code by`Typescript`,some commonly used tool functions.
+
+## Online Document
+
+[https://lclovestudy.github.io/-lichang666/](https://lclovestudy.github.io/-lichang666/)
 
 ### install
 
@@ -10,7 +14,7 @@ pnpm install @lichang666/utils
 
 ### usage
 
-It's more recommended to use<span style="padding:2px 5px;border-radius:3px;background-color:#ccc;color:red">pnpm</span> as the package manager.
+It's more recommended to use`pnpm`as the package manager.
 
 ```ts
 import { getRandomColor } from '@lichang666/utils'
