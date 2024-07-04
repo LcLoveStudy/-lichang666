@@ -26,6 +26,6 @@ const reHasUnicode = RegExp(`[${rsZWJ + rsAstralRange + rsComboRange + rsVarRang
  * @param {string} string The string to inspect.
  * @returns {boolean} Returns `true` if a symbol is found, else `false`.
  */
-export const hasUnicode = (string: string): boolean => {
-  return reHasUnicode.test(string)
+export const hasUnicode = (s: string): boolean => {
+  return reHasUnicode.test(s)
 }

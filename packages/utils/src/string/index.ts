@@ -1,3 +1,5 @@
 export * from './hasUnicode'
 export * from './isString'
 export * from './getRandomString'
+export * from './stringSize'
+export * from './unicodeSize'
