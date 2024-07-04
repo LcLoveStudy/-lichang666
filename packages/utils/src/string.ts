@@ -1,3 +1,4 @@
+export * from './hasUnicode'
 /**
  * 判断是否是字符串
  * @param {*} targetString
