@@ -13,6 +13,9 @@ export const sidebar = [
   },
   {
     text: 'String',
-    items: [{ text: 'isString', link: '/funcs/string/isString' }]
+    items: [
+      { text: 'isString', link: '/funcs/string/isString' },
+      { text: 'getRandomString', link: '/funcs/string/getRandomString' }
+    ]
   }
 ]
