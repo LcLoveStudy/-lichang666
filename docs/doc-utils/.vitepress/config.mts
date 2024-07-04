@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-
+import { sidebar } from './sidebar.config'
+import { searchConfig } from './search.config'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
@@ -9,8 +10,10 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/-lichang666/favicon.ico' }]],
   themeConfig: {
     logo: '/logo.png',
-    search: {
-      provider: 'local'
+    search: searchConfig,
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -18,24 +21,7 @@ export default defineConfig({
       { text: '函数列表', link: '/funcs/base/get-random-color' }
     ],
 
-    sidebar: [
-      {
-        text: '基础',
-        items: [{ text: '快速开始', link: '/getting-started' }]
-      },
-      {
-        text: 'Base',
-        items: [
-          { text: 'getRandomColor', link: '/funcs/base/get-random-color' },
-          { text: 'copyTxt', link: '/funcs/base/copy-txt' },
-          { text: 'debounce', link: '/funcs/base/debounce' }
-        ]
-      },
-      {
-        text: 'String',
-        items: [{ text: 'isString', link: '/funcs/string/is-string' }]
-      }
-    ],
+    sidebar: sidebar,
     socialLinks: [
       {
         icon: 'github',
