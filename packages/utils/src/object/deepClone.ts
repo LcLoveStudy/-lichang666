@@ -7,7 +7,9 @@
  * @email dotb116393@163.com
  */
 export const deepClone = <T>(oldObj: T): T => {
+  //handle !object and null
   if (typeof oldObj !== 'object' || oldObj === null) return oldObj
+  //handle Date
   if (oldObj instanceof Date) return new Date(oldObj.getTime()) as T
   return JSON.parse(JSON.stringify(oldObj))
 }
