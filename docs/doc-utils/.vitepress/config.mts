@@ -9,7 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '指南', link: '/getting-started' },
-      { text: '函数列表', link: '/utils/get-random-color' }
+      { text: '函数列表', link: '/funcs/get-random-color' }
     ],
 
     sidebar: [
@@ -20,9 +20,9 @@ export default defineConfig({
       {
         text: '通用函数',
         items: [
-          { text: 'getRandomColor', link: '/utils/get-random-color' },
-          { text: 'copyTxt', link: '/utils/copy-txt' },
-          { text: 'debounce', link: '/utils/debounce' }
+          { text: 'getRandomColor', link: '/funcs/get-random-color' },
+          { text: 'copyTxt', link: '/funcs/copy-txt' },
+          { text: 'debounce', link: '/funcs/debounce' }
         ]
       }
     ],
