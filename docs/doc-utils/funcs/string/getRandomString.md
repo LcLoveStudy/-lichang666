@@ -14,7 +14,7 @@ outline: deep
 
 #### 返回
 
-`boolean`
+`string`
 
 ```ts
 import { getRandomString } from '@lichang666/utils'
