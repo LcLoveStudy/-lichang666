@@ -7,9 +7,9 @@ export default defineConfig({
   base: '/-lichang666/',
   title: '@lichang666/utils',
   description: '一个基于TypeScript开发的常用函数工具库',
-  head: [['link', { rel: 'icon', href: '/-lichang666/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/-lichang666/public/favicon.ico' }]],
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/public/logo.png',
     search: searchConfig,
     docFooter: {
       prev: '上一页',
