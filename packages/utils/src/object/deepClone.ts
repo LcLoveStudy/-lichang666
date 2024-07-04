@@ -7,9 +7,3 @@
  * @email dotb116393@163.com
  */
 export const deepClone = <T>(oldObj: T): T => JSON.parse(JSON.stringify(oldObj))
-
-/**
- * 判断一个对象是否为空对象
- * @param {obejct} obj 目标对象
- */
-export const isEmptyObj = (obj: object) => JSON.stringify(obj) === '{}'
