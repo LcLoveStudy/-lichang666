@@ -2,4 +2,4 @@
 
 ### Refactoring
 
-- **deepClone:** add handler for non-objects([<u>f261f50</u>](https://github.com/LcLoveStudy/-lichang666/commit/f261f50215f5889516fb6af9295fba035acbad38))
+- **deepClone:** add handler for non-objects and Date([<u>d5fac8d</u>](https://github.com/LcLoveStudy/-lichang666/commit/d5fac8d30a6b0c5e9b6924d3673346c0d2763467))
