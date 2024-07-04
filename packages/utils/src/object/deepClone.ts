@@ -6,4 +6,7 @@
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const deepClone = <T>(oldObj: T): T => JSON.parse(JSON.stringify(oldObj))
+export const deepClone = <T>(oldObj: T): T => {
+  if (typeof oldObj !== 'object' || oldObj === null) return oldObj
+  return JSON.parse(JSON.stringify(oldObj))
+}
