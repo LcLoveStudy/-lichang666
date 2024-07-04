@@ -20,5 +20,9 @@ export const sidebar = [
       { text: 'hasUnicode', link: '/funcs/string/hasUnicode' },
       { text: 'unicodeSize', link: '/funcs/string/unicodeSize' }
     ]
+  },
+  {
+    text: 'Object',
+    items: [{ text: 'deepClone', link: '/funcs/object/deepClone' }]
   }
 ]
