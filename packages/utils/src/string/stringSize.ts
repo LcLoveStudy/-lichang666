@@ -5,6 +5,6 @@ import { unicodeSize } from './unicodeSize'
  * @param {string} s target `string`
  * @returns {number} size of `string`
  */
-export const stringSzie = (s: string): number => {
+export const stringSize = (s: string): number => {
   return hasUnicode(s) ? unicodeSize(s) : s.length
 }
