@@ -4,6 +4,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "doc-utils:build":"cd ./docs/doc-utils && pnpm install && pnpm vitepress build ./"
+  },
   "dependencies": {
     "prettier": "^3.3.2"
   }
