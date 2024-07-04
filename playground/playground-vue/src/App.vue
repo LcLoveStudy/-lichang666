@@ -11,23 +11,27 @@ const obj = ref({
 })
 const newObj = deepClone(obj.value)
 obj.value.a = 2
-console.log(obj.value.a, newObj.a)
+// console.log(obj.value.a, newObj.a)
 
 /** string test */
 const str = ref('1')
 const newStr = deepClone(str.value)
 str.value = '2'
-console.log(str.value, newStr)
+// console.log(str.value, newStr)
 
 /** array test */
 const arr = ref([1, 2, 3])
 const newArr = deepClone(arr.value)
 arr.value[0] = 4
-console.log(arr.value[0], newArr[0])
+// console.log(arr.value[0], newArr[0])
 
 /** date test */
 const date = ref(new Date())
 const newDate = deepClone(date.value)
+setTimeout(() => {
+  date.value = new Date()
+  console.log(date.value.toLocaleTimeString(), newDate.toLocaleTimeString())
+}, 1000)
 </script>
 
 <style scoped></style>

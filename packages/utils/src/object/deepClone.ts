@@ -8,5 +8,6 @@
  */
 export const deepClone = <T>(oldObj: T): T => {
   if (typeof oldObj !== 'object' || oldObj === null) return oldObj
+  if (oldObj instanceof Date) return new Date(oldObj.getTime()) as T
   return JSON.parse(JSON.stringify(oldObj))
 }
