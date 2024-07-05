@@ -9,3 +9,8 @@
 ### Feature
 
 - **isDate:** add `isDate` util ([<u>336ad5b</u>](https://github.com/LcLoveStudy/-lichang666/commit/336ad5b174e8544cd58b61e28d6bf5d59b9bf03c))
+
+### Refactoring
+
+- **isDateLike:** use `isDate` util ([<u>3218822</u>](https://github.com/LcLoveStudy/-lichang666/commit/3218822490fb2d719b56c49aea2ff13539bad403))
+- **dayOfYear:** handle `Date` and `DateLike`,add `Error` for `invalid` date ([<u>3218822</u>](https://github.com/LcLoveStudy/-lichang666/commit/3218822490fb2d719b56c49aea2ff13539bad403))
