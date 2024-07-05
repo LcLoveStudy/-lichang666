@@ -31,6 +31,10 @@ export const sidebar = [
     ]
   },
   {
+    text: 'Array',
+    items: [{ text: 'isArray', link: '/funcs/array/isArray' }]
+  },
+  {
     text: 'Date',
     items: [
       { text: 'isDate', link: '/funcs/date/isDate' },
