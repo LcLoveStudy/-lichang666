@@ -9,6 +9,7 @@
 ### Feature
 
 - **isDate:** add `isDate` util ([<u>336ad5b</u>](https://github.com/LcLoveStudy/-lichang666/commit/336ad5b174e8544cd58b61e28d6bf5d59b9bf03c))
+- **isPlainObject:** add `isPlainObject` util ([<u>cfb3212</u>](https://github.com/LcLoveStudy/-lichang666/commit/cfb3212422ca8f66b40a3fab82d400fed9b5adcc))
 
 ### Refactoring
 
