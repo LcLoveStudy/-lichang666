@@ -15,3 +15,4 @@
 
 - **isDateLike:** use `isDate` util ([<u>3218822</u>](https://github.com/LcLoveStudy/-lichang666/commit/3218822490fb2d719b56c49aea2ff13539bad403))
 - **dayOfYear:** handle `Date` and `DateLike`,add `Error` for `invalid` date ([<u>3218822</u>](https://github.com/LcLoveStudy/-lichang666/commit/3218822490fb2d719b56c49aea2ff13539bad403))
+- **isArray:** use `Array.isArray` and `Object.getPrototypeOf`([<u>3295548</u>](https://github.com/LcLoveStudy/-lichang666/commit/3295548234ac79603900c6237763909b3ad2ecdd))
