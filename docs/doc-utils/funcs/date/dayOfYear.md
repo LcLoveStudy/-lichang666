@@ -18,12 +18,8 @@ outline: deep
 
 ```ts
 import { dayOfYear } from '@lichang666/utils'
-const obj = {
-  a: 1,
-  b: '1'
-}
-dayOfYear(obj, 'a') // true
-dayOfYear(obj, 'c') // false
+dayOfYear('2023-01-01') // 1
+dayOfYear('2023-12-31') // 365
 ```
 
 ### demo
