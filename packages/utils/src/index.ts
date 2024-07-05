@@ -1,6 +1,6 @@
 export * from './array'
 export * from './object'
-export * from './time'
+export * from './date'
 export * from './string'
 export * from './debounce'
 export * from './getRandomColor'
