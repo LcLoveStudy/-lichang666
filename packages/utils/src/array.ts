@@ -4,7 +4,7 @@
  * @returns true||false
  */
 export const isArray = (target: unknown): boolean => {
-  return target instanceof Array
+  return Array.isArray(target) && Object.getPrototypeOf(target) === Array.prototype
 }
 
 /**
