@@ -28,5 +28,12 @@ export const sidebar = [
       { text: 'hasKey', link: '/funcs/object/hasKey' },
       { text: 'isEmptyObj', link: '/funcs/object/isEmptyObj' }
     ]
+  },
+  {
+    text: 'Date',
+    items: [
+      { text: 'dayOfYear', link: '/funcs/date/dayOfYear' },
+      { text: 'isDateLike', link: '/funcs/date/isDateLike' }
+    ]
   }
 ]
