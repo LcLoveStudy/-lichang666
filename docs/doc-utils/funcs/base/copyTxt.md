@@ -8,13 +8,13 @@ outline: deep
 
 ### 基础用法
 
-#### 参数
-
-仅仅接受一个`string`要复制的文本
+| 参数名  | 参数类型 | 是否必传 | 参数说明     |
+| ------- | -------- | -------- | ------------ |
+| content | `string` | 是       | 需要复制文本 |
 
 #### 返回值
 
-返回一个`Promise`对象
+`Promise`
 
 ```ts
 import { copyTxt } from '@lichang666/utils'
