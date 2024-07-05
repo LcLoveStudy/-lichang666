@@ -24,6 +24,7 @@ export const sidebar = [
   {
     text: 'Object',
     items: [
+      { text: 'isPlainObject', link: '/funcs/object/isPlainObject' },
       { text: 'deepClone', link: '/funcs/object/deepClone' },
       { text: 'hasKey', link: '/funcs/object/hasKey' },
       { text: 'isEmptyObj', link: '/funcs/object/isEmptyObj' }
