@@ -31,6 +31,9 @@ export const sidebar = [
   },
   {
     text: 'Date',
-    items: [{ text: 'dayOfYear', link: '/funcs/date/dayOfYear' }]
+    items: [
+      { text: 'dayOfYear', link: '/funcs/date/dayOfYear' },
+      { text: 'isDateLike', link: '/funcs/date/isDateLike' }
+    ]
   }
 ]

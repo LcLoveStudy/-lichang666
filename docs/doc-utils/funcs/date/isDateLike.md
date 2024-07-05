@@ -4,24 +4,21 @@ outline: deep
 
 # isDateLike
 
-判断目标日期是否是`Date`类型或者是否可以被转换为`Date`类型
+参数是否是`Date`类型或者是否可以被转换为`Date`类型
 
 ### 基础用法
 
-| 参数名 | 参数类型 | 是否必传 | 参数说明 |
-| ------ | -------- | -------- | -------- |
-| date   | `Date`   | 是       | 目标日期 |
+| 参数名 | 参数类型  | 是否必传 | 参数说明     |
+| ------ | --------- | -------- | ------------ |
+| date   | `unknown` | 是       | 要检测的参数 |
 
 #### 返回
 
-`number`
+`boolean`
 
 ```ts
 import { isDateLike } from '@lichang666/utils'
-const obj = {
-  a: 1,
-  b: '1'
-}
-isDateLike(obj, 'a') // true
-isDateLike(obj, 'c') // false
+isDateLike('2022-01-01') // true
+isDateLike(new Date()) // true
+isDateLike({}) // false
 ```
