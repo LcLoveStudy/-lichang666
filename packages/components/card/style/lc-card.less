@@ -1,0 +1,29 @@
+@import '../../design/var.less';
+@--lc-card-min-width: 1rem;
+@--lc-card-border-radius: 5px;
+@--lc-card-color-bg: #fff;
+@--lc-card-padding: 1rem;
+@--lc-card-color-shadow: lighten(#ccc, 3%);
+@--lc-card-shadow:0.1rem 0.3rem .5rem @--lc-card-color-shadow,
+-0.1rem -0.3rem .5rem @--lc-card-color-shadow;
+.lc-card {
+  display: inline-block;
+  overflow: hidden;
+  background-color: @--lc-card-color-bg;
+  border: 1px solid @--lc-border-color-gay;
+  border-radius: @--lc-card-border-radius;
+  min-width: @--lc-card-min-width;
+  min-height: @--lc-card-min-width;
+  padding: @--lc-card-padding;
+  &-shadow {
+    &-always {
+      box-shadow: @--lc-card-shadow;
+    }
+    &-hover {
+      transition: box-shadow 0.3s;
+      &:hover {
+        box-shadow: @--lc-card-shadow;
+      }
+    }
+  }
+}
