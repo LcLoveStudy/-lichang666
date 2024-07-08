@@ -22,6 +22,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3(@algolia/client-search@4.24.0)(search-insights@2.14.0)
 
+  packages/components: {}
+
   packages/hooks-vue:
     dependencies:
       vue:
@@ -32,6 +34,9 @@ importers:
 
   playground/playground-vue:
     dependencies:
+      '@lichang666/lc-design-vue':
+        specifier: workspace:^
+        version: link:../../packages/components
       '@lichang666/utils':
         specifier: workspace:^
         version: link:../../packages/utils
