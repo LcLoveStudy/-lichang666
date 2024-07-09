@@ -16,10 +16,7 @@ export default defineConfig({
       next: '下一页'
     },
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '指南', link: '/getting-started' },
-      { text: '函数列表', link: '/funcs/base/getRandomColor' }
-    ],
+    nav: [{ text: '函数列表', link: '/funcs/getting-started' }],
 
     sidebar: sidebar,
     socialLinks: [

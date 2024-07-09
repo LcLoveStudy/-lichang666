@@ -3,20 +3,20 @@
 layout: home
 
 hero:
-  name: '@lichang666/utils'
-  text: '一个基于TypeScript的函数工具库'
-  tagline: 使用工具函数,减少代码冗余!
+  name: '@lichang666'
+  text: '一个基于TypeScript的工具库'
+  tagline: 增强复用,减少代码冗余!
   actions:
-    - theme: alt
-      text: 安装
-      link: /getting-started
     - theme: brand
       text: 函数列表
-      link: /funcs/base/getRandomColor
+      link: /funcs/getting-started
+    - theme: brand
+      text: 组件库
+      link: /components/card
 
 features:
   - title: TypeScript编写
     details: 使用TypeScript编写,拥有更好的类型支持
   - title: 易学易用
-    details: 有全面的文档,对每个函数都有详细的说明和使用案例
+    details: 有全面的文档,有详细的说明和使用案例
 ---
