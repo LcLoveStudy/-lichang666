@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.2.3"
+    "vitepress": "^1.3.0"
   },
   "dependencies": {
     "@lichang666/utils": "workspace:^"
