@@ -14,6 +14,9 @@ importers:
 
   docs:
     dependencies:
+      '@lichang666/lc-design-vue':
+        specifier: workspace:^
+        version: link:../packages/components
       '@lichang666/utils':
         specifier: workspace:^
         version: link:../packages/utils
