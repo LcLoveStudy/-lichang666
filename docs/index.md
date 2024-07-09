@@ -12,7 +12,7 @@ hero:
       link: /funcs/getting-started
     - theme: brand
       text: 组件库
-      link: /components/card
+      link: /components/getting-started
 
 features:
   - title: TypeScript编写

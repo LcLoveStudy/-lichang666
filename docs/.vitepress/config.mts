@@ -16,7 +16,10 @@ export default defineConfig({
       next: '下一页'
     },
     // https://vitepress.dev/reference/default-theme-config
-    nav: [{ text: '函数列表', link: '/funcs/getting-started' }],
+    nav: [
+      { text: '函数列表', link: '/funcs/getting-started' },
+      { text: '组件库', link: '/components/getting-started' }
+    ],
 
     sidebar: sidebar,
     socialLinks: [
