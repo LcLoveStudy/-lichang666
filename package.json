@@ -5,7 +5,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "docs:build": "cd ./docs && pnpm install && pnpm vitepress build ./"
+    "docs:build": "cd ./docs && pnpm add vitepress && pnpm vitepress build ./"
   },
   "dependencies": {
     "prettier": "^3.3.2"
