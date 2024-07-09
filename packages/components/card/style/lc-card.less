@@ -10,7 +10,6 @@
   display: inline-block;
   overflow: hidden;
   background-color: @--lc-card-color-bg;
-  border: 1px solid @--lc-border-color-gay;
   border-radius: @--lc-card-border-radius;
   min-width: @--lc-card-min-width;
   min-height: @--lc-card-min-width;
@@ -25,5 +24,8 @@
         box-shadow: @--lc-card-shadow;
       }
     }
+  }
+  &-border {
+    border: 1px solid lighten(@--lc-border-color-gay, 5%);
   }
 }

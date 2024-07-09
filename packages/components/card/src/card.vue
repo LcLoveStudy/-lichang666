@@ -1,5 +1,8 @@
 <template>
-  <div class="lc-card" :class="[`lc-card-shadow-${props.shadow}`]">
+  <div
+    class="lc-card"
+    :class="[`lc-card-shadow-${props.shadow}`, props.border ? 'lc-card-border' : '']"
+  >
     <slot name="default"></slot>
   </div>
 </template>
@@ -10,6 +13,10 @@
     shadow: {
       type: String as PropType<'always' | 'hover' | 'never'>,
       default: 'always'
+    },
+    border: {
+      type: Boolean,
+      default: true
     }
   })
 </script>
