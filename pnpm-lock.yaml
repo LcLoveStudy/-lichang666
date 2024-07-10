@@ -26,6 +26,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@lichang666/utils':
+        specifier: workspace:^
+        version: link:../utils
       vue:
         specifier: ^3.4.31
         version: 3.4.31(typescript@5.4.5)

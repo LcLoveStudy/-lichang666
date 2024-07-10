@@ -10,6 +10,7 @@
     "less": "^4.2.0"
   },
   "dependencies": {
+    "@lichang666/utils": "workspace:^",
     "vue": "^3.4.31"
   }
 }
