@@ -5,9 +5,13 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "docs:build": "cd ./docs && pnpm install && pnpm vitepress build ./"
+    "docs:build": "pnpm install && cd ./docs && pnpm vitepress build ./"
   },
   "dependencies": {
-    "prettier": "^3.3.2"
+    "@lichang666/hooks-vue": "workspace:^",
+    "@lichang666/lc-design-vue": "workspace:^",
+    "@lichang666/utils": "workspace:^",
+    "prettier": "^3.3.2",
+    "vitepress": "^1.3.0"
   }
 }
