@@ -5,23 +5,26 @@
       dolorum possimus iusto labore, consectetur ipsum accusantium quaerat minima repellat
       reprehenderit aut at totam consequuntur autem delectus.
     </lc-card>
+    <lc-button color="#8b5cf6" disabled>lichang666</lc-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { LcCard } from '@lichang666/lc-design-vue'
+import { LcCard, LcButton } from '@lichang666/lc-design-vue'
 </script>
 
 <style scoped>
 .playground {
-  width: 100%;
-  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   background-color: #eee;
 }
 .my-card {
   width: 20rem;
+  margin-bottom: 1rem;
 }
 </style>
