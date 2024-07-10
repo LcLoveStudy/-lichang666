@@ -26,15 +26,15 @@
   })
   //custom color hover cumputed
   const hoverBgColor = computed(() => {
-    return props.color === '' ? '' : lightenHexColor(props.color as string, 5)
+    return props.color ? lightenHexColor(props.color as string, 5) : ''
   })
   //custom color active cumputed
   const activeBgColor = computed(() => {
-    return props.color === '' ? '' : darkenHexColor(props.color as string, 5)
+    return props.color ? darkenHexColor(props.color as string, 5) : ''
   })
   //custom color disabled cumputed
   const disabledBgColor = computed(() => {
-    return props.color === '' ? '' : hexToRgbaWithOpacity(props.color as string, 60)
+    return props.color ? hexToRgbaWithOpacity(props.color as string, 60) : ''
   })
 </script>
 
