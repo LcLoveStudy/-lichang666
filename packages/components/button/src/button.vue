@@ -114,6 +114,7 @@
     return props.color === '' ? '' : darkenHexColor(props.color as string, 5)
   })
   const disabledBgColor = computed(() => {
+    console.log(hexToRgbaWithOpacity(props.color as string, 60))
     return props.color === '' ? '' : hexToRgbaWithOpacity(props.color as string, 60)
   })
 </script>
