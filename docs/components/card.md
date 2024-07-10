@@ -59,14 +59,6 @@ Card阴影有三种选择 `aways` `hover` `never` ,默认为`aways`
 </script>
 ```
 
-<style>
-.show-box{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-</style>
-
 ## 边框
 
 <div class="show-box">
@@ -96,3 +88,11 @@ Card阴影有三种选择 `aways` `hover` `never` ,默认为`aways`
 | ------ | --------- | ------- | --------------------------- |
 | shadow | `string`  | 'aways' | 阴影效果`aways/hover/never` |
 | border | `boolean` | true    | 是否有边框                  |
+
+<style>
+.show-box{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+</style>
