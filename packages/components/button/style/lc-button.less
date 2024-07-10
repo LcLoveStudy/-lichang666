@@ -13,6 +13,23 @@
   border: 1px solid;
   cursor: pointer;
   outline: none;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-loading {
+    margin-right: 10px;
+    animation: rotate 1s linear infinite;
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
   &-primary {
     background-color: @--lc-button-bg-color-primary;
     color: @--lc-button-text-color;

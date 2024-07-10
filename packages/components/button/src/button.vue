@@ -2,15 +2,19 @@
   <button
     class="lc-button"
     :class="[`lc-button-${type}`, color ? 'lc-button-custom' : '']"
-    :disabled="disabled"
+    :disabled="disabled || loading"
   >
-    <slot></slot>
+    <div class="lc-button-content">
+      <loading-icon class="lc-button-loading" v-show="loading" />
+      <slot></slot>
+    </div>
   </button>
 </template>
 
 <script setup lang="ts">
   import { computed, type PropType } from 'vue'
   import { lightenHexColor, darkenHexColor, hexToRgbaWithOpacity } from '@lichang666/utils'
+  import LoadingIcon from '../../icons/loading.vue'
   const props = defineProps({
     type: {
       type: String as PropType<'primary' | 'warning'>,
@@ -22,6 +26,10 @@
     },
     color: {
       type: String
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   })
   //custom color hover cumputed
