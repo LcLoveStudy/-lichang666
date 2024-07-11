@@ -27,6 +27,9 @@
     opacity: 1;
     transition: 0s;
   }
+  &:disabled::after {
+    opacity: 0;
+  }
   &-content {
     display: flex;
     align-items: center;
@@ -59,6 +62,7 @@
       background-color: darken(@--lc-button-bg-color-primary, 5%);
     }
     &:disabled {
+      border-color: rgba(@--lc-button-bg-color-primary, 0.6);
       background-color: rgba(@--lc-button-bg-color-primary, 0.6);
       cursor: not-allowed;
     }
@@ -78,6 +82,7 @@
       background-color: darken(@--lc-button-bg-color-warning, 5%);
     }
     &:disabled {
+      border-color: rgba(@--lc-button-bg-color-warning, 0.6);
       background-color: rgba(@--lc-button-bg-color-warning, 0.6);
       cursor: not-allowed;
     }
