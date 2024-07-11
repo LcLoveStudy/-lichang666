@@ -4,6 +4,7 @@
 @--lc-button-bg-color-primary: #3b82f6;
 @--lc-button-bg-color-warning: #f59e0b;
 @--lc-button-background-transition:background-color 0.15s ease-in-out;
+@--lc-button-shadow-transition: 0.5s;
 .lc-button {
   border: none;
   font-size: 1rem;
@@ -13,6 +14,19 @@
   border: 1px solid;
   cursor: pointer;
   outline: none;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: @--lc-button-shadow-transition;
+  }
+  &:active::after {
+    opacity: 1;
+    transition: 0s;
+  }
   &-content {
     display: flex;
     align-items: center;
@@ -38,6 +52,9 @@
     &:hover {
       background-color: lighten(@--lc-button-bg-color-primary, 5%);
     }
+    &::after {
+      box-shadow: 0 0 10px darken(@--lc-button-bg-color-primary, 5%);
+    }
     &:active {
       background-color: darken(@--lc-button-bg-color-primary, 5%);
     }
@@ -53,6 +70,9 @@
     transition: @--lc-button-background-transition;
     &:hover {
       background-color: lighten(@--lc-button-bg-color-warning, 5%);
+    }
+    &::after {
+      box-shadow: 0 0 10px darken(@--lc-button-bg-color-warning, 5%);
     }
     &:active {
       background-color: darken(@--lc-button-bg-color-warning, 5%);

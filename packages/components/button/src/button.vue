@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, type PropType } from 'vue'
+  import { computed, onMounted, onUnmounted, type PropType, ref } from 'vue'
   import { lightenHexColor, darkenHexColor, hexToRgbaWithOpacity } from '@lichang666/utils'
   import LoadingIcon from '../../icons/loading.vue'
   const props = defineProps({
@@ -55,6 +55,9 @@
     }
     &:active {
       background-color: v-bind(activeBgColor);
+    }
+    &::after {
+      box-shadow: 0 0 10px v-bind(activeBgColor);
     }
     &:disabled {
       background-color: v-bind(disabledBgColor);
