@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, type PropType } from 'vue'
-  import { lightenHexColor, darkenHexColor, hexToRgbaWithOpacity } from '@lichang666/utils'
+  import { type PropType } from 'vue'
   import LoadingIcon from '../../icons/loading.vue'
+  import { customColorComputed } from './custom-color'
   const props = defineProps({
     type: {
       type: String as PropType<'primary' | 'warning'>,
@@ -32,23 +32,14 @@
       default: false
     }
   })
-  //custom color hover cumputed
-  const hoverBgColor = computed(() => {
-    return props.color ? lightenHexColor(props.color as string, 5) : ''
-  })
-  //custom color active cumputed
-  const activeBgColor = computed(() => {
-    return props.color ? darkenHexColor(props.color as string, 5) : ''
-  })
-  //custom color disabled cumputed
-  const disabledBgColor = computed(() => {
-    return props.color ? hexToRgbaWithOpacity(props.color as string, 60) : ''
-  })
+  const { hoverBgColor, activeBgColor, disabledBgColor } = customColorComputed(
+    props.color as string
+  )
 </script>
 
 <style lang="less" scoped>
   .lc-button-custom {
-    background-color: v-bind(color);
+    background: v-bind(color);
     border-color: v-bind(color);
     &:hover {
       background-color: v-bind(hoverBgColor);
