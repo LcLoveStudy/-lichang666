@@ -2,6 +2,7 @@
   <button
     class="lc-button"
     :class="[color ? 'lc-button-custom' : `lc-button-${type}`]"
+    :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
@@ -34,6 +35,10 @@
     loading: {
       type: Boolean,
       default: false
+    },
+    textSpace: {
+      type: Number,
+      default: 0
     }
   })
   const { hoverBgColor, activeBgColor, disabledBgColor } = customColorComputed(
