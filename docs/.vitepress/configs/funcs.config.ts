@@ -10,9 +10,18 @@ export default [
   {
     text: 'Base',
     items: [
-      { text: 'getRandomColor', link: '/funcs/base/getRandomColor' },
       { text: 'copyTxt', link: '/funcs/base/copyTxt' },
       { text: 'debounce', link: '/funcs/base/debounce' }
+    ]
+  },
+  {
+    text: 'Color',
+    items: [
+      { text: 'isHexColor', link: '/funcs/color/isHexColor' },
+      { text: 'getRandomColor', link: '/funcs/color/getRandomColor' },
+      { text: 'darkenHexColor', link: '/funcs/color/darkenHexColor' },
+      { text: 'lightenHexColor', link: '/funcs/color/lightenHexColor' },
+      { text: 'hexToRgbaWithOpacity', link: '/funcs/color/hexToRgbaWithOpacity' }
     ]
   },
   {
