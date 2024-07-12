@@ -1,7 +1,15 @@
-import { lightenHexColor, darkenHexColor, hexToRgbaWithOpacity } from '@lichang666/utils'
+import {
+  lightenHexColor,
+  darkenHexColor,
+  hexToRgbaWithOpacity,
+  isHexColor
+} from '@lichang666/utils'
 import { computed } from 'vue'
 /** custom color computed */
 export const customColorComputed = (color: string) => {
+  if (!isHexColor(color)) {
+    throw new Error('color must be a hex color')
+  }
   //custom color hover cumputed
   const hoverBgColor = computed(() => {
     return color ? lightenHexColor(color, 5) : ''
