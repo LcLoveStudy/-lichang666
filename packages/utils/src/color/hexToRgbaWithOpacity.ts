@@ -3,7 +3,7 @@
  * @param hex 16进制颜色
  * @param percent 透明百分比
  * @returns 透明后的颜色(RGBA)
- * @example lightenHexColor('#8b5cf6',60) //rgba(139, 92, 246, 0.6)
+ * @example hexToRgbaWithOpacity('#8b5cf6',60) //rgba(139, 92, 246, 0.6)
  */
 export const hexToRgbaWithOpacity = (hex: string, opacityPercent: number) => {
   // 将透明度百分比转换为0到1之间的小数
