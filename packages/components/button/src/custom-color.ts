@@ -22,9 +22,14 @@ export const customColorComputed = (color: string) => {
   const disabledBgColor = computed(() => {
     return color ? hexToRgbaWithOpacity(color, 60) : ''
   })
+  //custom color plain computed
+  const plainBgColor = computed(() => {
+    return color ? hexToRgbaWithOpacity(color, 10) : ''
+  })
   return {
     hoverBgColor,
     activeBgColor,
-    disabledBgColor
+    disabledBgColor,
+    plainBgColor
   }
 }

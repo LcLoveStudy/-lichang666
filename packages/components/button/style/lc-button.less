@@ -2,12 +2,17 @@
 @--lc-button-radius: 0.3rem;
 @--lc-button-text-color-white: #fff;
 @--lc-button-text-color-dark: #000;
+@--lc-button-background-transition:background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,color 0.15s ease-in-out;
+@--lc-button-shadow-transition: 0.5s;
+/** 颜色列表 */
 @--lc-button-bg-color-primary: #3b82f6;
 @--lc-button-bg-color-warning: #f59e0b;
 @--lc-button-bg-color-error: #ef4444;
 @--lc-button-bg-color-default: #fff;
-@--lc-button-background-transition:background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,color 0.15s ease-in-out;
-@--lc-button-shadow-transition: 0.5s;
+@colors: @--lc-button-bg-color-primary, @--lc-button-bg-color-warning, @--lc-button-bg-color-error;
+@types: primary, warning, error;
+
+/** 基础类 */
 .lc-button {
   border: none;
   font-size: 1rem;
@@ -51,83 +56,69 @@
       }
     }
   }
-  &-primary {
-    background-color: @--lc-button-bg-color-primary;
+}
+
+/** default累 */
+.lc-button-default {
+  background-color: @--lc-button-bg-color-default;
+  color: lighten(@--lc-button-text-color-dark, 35%);
+  border-color: darken(@--lc-button-bg-color-default, 15%);
+  transition: @--lc-button-background-transition;
+  &:hover {
+    color: @--lc-button-bg-color-primary;
     border-color: @--lc-button-bg-color-primary;
-    transition: @--lc-button-background-transition;
-    &:hover {
-      background-color: lighten(@--lc-button-bg-color-primary, 5%);
-    }
-    &::after {
-      box-shadow: 0 0 10px darken(@--lc-button-bg-color-primary, 5%);
-    }
-    &:active {
-      background-color: darken(@--lc-button-bg-color-primary, 5%);
-    }
-    &:disabled {
-      border-color: rgba(@--lc-button-bg-color-primary, 0.6);
-      background-color: rgba(@--lc-button-bg-color-primary, 0.6);
-      cursor: not-allowed;
-    }
   }
-  &-warning {
-    background-color: @--lc-button-bg-color-warning;
-    border-color: @--lc-button-bg-color-warning;
-    transition: @--lc-button-background-transition;
-    &:hover {
-      background-color: lighten(@--lc-button-bg-color-warning, 5%);
-    }
-    &::after {
-      box-shadow: 0 0 10px darken(@--lc-button-bg-color-warning, 5%);
-    }
-    &:active {
-      background-color: darken(@--lc-button-bg-color-warning, 5%);
-    }
-    &:disabled {
-      border-color: rgba(@--lc-button-bg-color-warning, 0.6);
-      background-color: rgba(@--lc-button-bg-color-warning, 0.6);
-      cursor: not-allowed;
-    }
+  &::after {
+    box-shadow: 0 0 10px lighten(@--lc-button-bg-color-primary, 15%);
   }
-  &-error {
-    background-color: @--lc-button-bg-color-error;
-    border-color: @--lc-button-bg-color-error;
-    transition: @--lc-button-background-transition;
-    &:hover {
-      background-color: lighten(@--lc-button-bg-color-error, 5%);
-    }
-    &::after {
-      box-shadow: 0 0 10px darken(@--lc-button-bg-color-error, 5%);
-    }
-    &:active {
-      background-color: darken(@--lc-button-bg-color-error, 5%);
-    }
-    &:disabled {
-      border-color: rgba(@--lc-button-bg-color-error, 0.6);
-      background-color: rgba(@--lc-button-bg-color-error, 0.6);
-      cursor: not-allowed;
-    }
+  &:active {
+    color: darken(@--lc-button-bg-color-primary, 15%);
   }
-  &-default {
-    background-color: @--lc-button-bg-color-default;
-    color: lighten(@--lc-button-text-color-dark, 35%);
-    border-color: darken(@--lc-button-bg-color-default, 15%);
-    transition: @--lc-button-background-transition;
-    &:hover {
-      color: @--lc-button-bg-color-primary;
-      border-color: @--lc-button-bg-color-primary;
-    }
-    &::after {
-      box-shadow: 0 0 10px lighten(@--lc-button-bg-color-primary, 15%);
-    }
-    &:active {
-      color: darken(@--lc-button-bg-color-primary, 15%);
-    }
-    &:disabled {
-      color: lighten(@--lc-button-text-color-dark, 55%);
-      border-color: darken(@--lc-button-bg-color-default, 20%);
-      background-color: rgba(@--lc-button-bg-color-default, 0.6);
-      cursor: not-allowed;
-    }
+  &:disabled {
+    color: lighten(@--lc-button-text-color-dark, 55%);
+    border-color: darken(@--lc-button-bg-color-default, 20%);
+    background-color: rgba(@--lc-button-bg-color-default, 0.6);
+    cursor: not-allowed;
   }
 }
+
+/** 循环生成类 */
+.generate-class(@i) when(@i>0) {
+  @name: extract(@types, @i);
+  .lc-button-@{name} {
+    @color: extract(@colors, @i);
+    background-color: @color;
+    border-color: @color;
+    transition: @--lc-button-background-transition;
+    &:hover {
+      background-color: lighten(@color, 5%);
+    }
+    &::after {
+      box-shadow: 0 0 10px darken(@color, 5%);
+    }
+    &:active {
+      background-color: darken(@color, 5%);
+    }
+    &:disabled {
+      border-color: rgba(@color, 0.6);
+      background-color: rgba(@color, 0.6);
+      cursor: not-allowed;
+    }
+    &.lc-button-plain {
+      background-color: rgba(@color, 10%);
+      color: darken(@color, 10%);
+      &:hover {
+        background-color: @color;
+        color: @--lc-button-text-color-white;
+      }
+      &:disabled {
+        border-color: rgba(@color, 0.6);
+        background-color: rgba(@color, 10%);
+        color: rgba(@color, 0.6);
+        cursor: not-allowed;
+      }
+    }
+  }
+  .generate-class(@i - 1);
+}
+.generate-class(length(@types));

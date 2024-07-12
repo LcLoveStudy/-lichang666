@@ -1,7 +1,10 @@
 <template>
   <button
     class="lc-button"
-    :class="[color ? 'lc-button-custom' : `lc-button-${type}`]"
+    :class="[
+      color ? 'lc-button-custom' : type ? `lc-button-${type}` : 'lc-button-default',
+      { 'lc-button-plain': plain }
+    ]"
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
@@ -25,6 +28,10 @@
       type: String as PropType<'primary' | 'warning' | 'error' | 'default'>,
       default: 'default'
     },
+    plain: {
+      type: Boolean,
+      default: false
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -41,7 +48,7 @@
       default: 0
     }
   })
-  const { hoverBgColor, activeBgColor, disabledBgColor } = customColorComputed(
+  const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = customColorComputed(
     props.color as string
   )
 </script>
@@ -63,6 +70,20 @@
       border-color: v-bind(disabledBgColor);
       background-color: v-bind(disabledBgColor);
       cursor: not-allowed;
+    }
+    &.lc-button-plain {
+      background-color: v-bind(plainBgColor);
+      color: v-bind(color);
+      &:hover {
+        background-color: v-bind(color);
+        color: #fff;
+      }
+      &:disabled {
+        border-color: v-bind(disabledBgColor);
+        background-color: v-bind(plainBgColor);
+        color: v-bind(disabledBgColor);
+        cursor: not-allowed;
+      }
     }
   }
 </style>
