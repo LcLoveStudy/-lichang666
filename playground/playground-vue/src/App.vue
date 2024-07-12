@@ -5,7 +5,7 @@
       dolorum possimus iusto labore, consectetur ipsum accusantium quaerat minima repellat
       reprehenderit aut at totam consequuntur autem delectus.
     </lc-card>
-    <lc-button type="primary">hello world</lc-button>
+    <lc-button color="primary">hello world</lc-button>
   </div>
 </template>
 
