@@ -6,5 +6,9 @@ export default [
   {
     text: 'Card 卡片',
     link: '/components/card'
+  },
+  {
+    text: 'Button 按钮',
+    link: '/components/button'
   }
 ]
