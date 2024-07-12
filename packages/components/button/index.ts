@@ -1,3 +1,4 @@
-import { default as LcButton } from './src/button.vue'
+import Button from './src/button.vue'
 import './style/lc-button.less'
-export default LcButton
+export const LcButton = Button
+export type LcButtonInstance = InstanceType<typeof LcButton>

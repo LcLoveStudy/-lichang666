@@ -20,34 +20,10 @@
 </template>
 
 <script setup lang="ts">
-  import { type PropType } from 'vue'
   import LoadingIcon from '../../icons/loading.vue'
-  import { customColorComputed } from './custom-color'
-  const props = defineProps({
-    type: {
-      type: String as PropType<'primary' | 'warning' | 'error' | 'default'>,
-      default: 'default'
-    },
-    plain: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    color: {
-      type: String
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    textSpace: {
-      type: Number,
-      default: 0
-    }
-  })
+  import { buttonProps } from './button'
+  import { customColorComputed } from './custom-color-computed'
+  const props = defineProps(buttonProps)
   const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = customColorComputed(
     props.color as string
   )

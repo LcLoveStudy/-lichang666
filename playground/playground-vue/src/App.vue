@@ -5,7 +5,7 @@
       dolorum possimus iusto labore, consectetur ipsum accusantium quaerat minima repellat
       reprehenderit aut at totam consequuntur autem delectus.
     </lc-card>
-    <lc-button>lichang666</lc-button>
+    <lc-button color="#4f46e5">lichang666</lc-button>
   </div>
 </template>
 

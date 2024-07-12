@@ -1,3 +1,4 @@
-import { default as LcCard } from './src/card.vue'
+import Card from './src/card.vue'
 import './style/lc-card.less'
-export default LcCard
+export const LcCard = Card
+export type LcCardInstance = InstanceType<typeof LcCard>
