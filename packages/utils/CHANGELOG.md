@@ -13,6 +13,7 @@
 - **darkenHexColor:** add `darkenHexColor` util ([<u>e94cd2e</u>](https://github.com/LcLoveStudy/-lichang666/commit/e94cd2e6103bf03fada587e4ca6813f91ffce7cb))
 - **hexToRgbaWithOpacity:** add `hexToRgbaWithOpacity` util ([<u>e94cd2e</u>](https://github.com/LcLoveStudy/-lichang666/commit/e94cd2e6103bf03fada587e4ca6813f91ffce7cb))
 - **lightenHexColor:** add `lightenHexColor` util ([<u>e94cd2e</u>](https://github.com/LcLoveStudy/-lichang666/commit/e94cd2e6103bf03fada587e4ca6813f91ffce7cb))
+- **isHexColor:** add `isHexColor` util ([<u>30652e4</u>](https://github.com/LcLoveStudy/-lichang666/commit/30652e42a8f64182a5c3f2b2103cc5bc2f7cf2c7))
 
 ### Refactoring
 
