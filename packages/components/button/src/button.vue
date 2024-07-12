@@ -11,17 +11,14 @@
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
-      <loading-icon
-        class="lc-button-loading"
-        :color="type === 'default' ? '#000' : '#fff'"
-        v-show="loading"
-      />
+      <loading-icon class="lc-button-loading" :color="loadingIconColor" v-show="loading" />
       <slot></slot>
     </div>
   </button>
 </template>
 
 <script setup lang="ts">
+  import { computed } from 'vue'
   import LoadingIcon from '../../icons/loading.vue'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
@@ -29,6 +26,9 @@
   const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = customColorComputed(
     props.color as string
   )
+  const loadingIconColor = computed(() => {
+    return props.type === 'default' || props.plain ? '#000' : '#fff'
+  })
 </script>
 
 <style lang="less" scoped>
