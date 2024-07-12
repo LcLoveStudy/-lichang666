@@ -1,11 +1,15 @@
 <template>
   <button
     class="lc-button"
-    :class="[`lc-button-${type}`, color ? 'lc-button-custom' : '']"
+    :class="[color ? 'lc-button-custom' : `lc-button-${type}`]"
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" />
+      <loading-icon
+        class="lc-button-loading"
+        :color="type === 'default' ? '#000' : '#fff'"
+        v-show="loading"
+      />
       <slot></slot>
     </div>
   </button>
@@ -17,8 +21,8 @@
   import { customColorComputed } from './custom-color'
   const props = defineProps({
     type: {
-      type: String as PropType<'primary' | 'warning'>,
-      default: 'primary'
+      type: String as PropType<'primary' | 'warning' | 'error' | 'default'>,
+      default: 'default'
     },
     disabled: {
       type: Boolean,

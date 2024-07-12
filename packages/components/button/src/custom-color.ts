@@ -7,7 +7,7 @@ import {
 import { computed } from 'vue'
 /** custom color computed */
 export const customColorComputed = (color: string) => {
-  if (!isHexColor(color)) {
+  if (color && !isHexColor(color)) {
     throw new Error('color must be a hex color')
   }
   //custom color hover cumputed
