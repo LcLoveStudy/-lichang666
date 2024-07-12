@@ -3,7 +3,9 @@
     class="lc-button"
     :class="[
       color ? 'lc-button-custom' : type ? `lc-button-${type}` : 'lc-button-default',
-      { 'lc-button-plain': plain }
+      { 'lc-button-plain': plain },
+      { 'lc-button-round': round },
+      { 'lc-button-circle': circle }
     ]"
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"

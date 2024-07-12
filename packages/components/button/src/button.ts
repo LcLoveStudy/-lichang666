@@ -20,8 +20,17 @@ export const buttonProps = {
     type: Boolean,
     default: false
   },
+  round: {
+    type: Boolean,
+    default: false
+  },
+  circle: {
+    type: Boolean,
+    default: false
+  },
   textSpace: {
     type: Number,
     default: 0
   }
 }
+export type LcButtonProps = Readonly<typeof buttonProps>
