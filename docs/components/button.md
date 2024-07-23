@@ -217,8 +217,9 @@
 
 <style>
 .show-box{
-    display:flex;
-    gap:20px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
     margin-bottom:10px;
 }
 .show-box:last-child{
