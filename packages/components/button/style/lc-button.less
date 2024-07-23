@@ -1,4 +1,4 @@
-@--lc-button-padding:0.5rem 1rem;
+@--lc-button-padding:0.3rem 1.2rem;
 @--lc-button-radius: 0.3rem;
 @--lc-button-text-color-white: #fff;
 @--lc-button-text-color-dark: #000;
@@ -40,7 +40,7 @@
     opacity: 0;
   }
   &-content {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
   }
@@ -61,12 +61,17 @@
   }
   &-circle {
     border-radius: 50%;
+    padding: 0;
+    padding: 0 1rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 2rem;
     height: 2rem;
     overflow: hidden;
+    & .lc-button-loading {
+      margin-right: 0;
+    }
   }
 }
 
