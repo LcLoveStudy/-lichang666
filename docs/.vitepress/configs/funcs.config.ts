@@ -15,6 +15,13 @@ export default [
     ]
   },
   {
+    text: 'Number',
+    items: [
+      { text: 'isNumber', link: '/funcs/number/isNumber' },
+      { text: 'numFix', link: '/funcs/number/numFix' }
+    ]
+  },
+  {
     text: 'Color',
     items: [
       { text: 'isHexColor', link: '/funcs/color/isHexColor' },
