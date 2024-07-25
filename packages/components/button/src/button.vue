@@ -11,7 +11,7 @@
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" color="#1d4ed8" />
+      <loading-icon class="lc-button-loading" v-show="loading" />
       <slot></slot>
     </div>
   </button>
