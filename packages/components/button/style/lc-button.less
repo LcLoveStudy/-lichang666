@@ -75,12 +75,15 @@
   }
 }
 
-/** default累 */
+/** default */
 .lc-button-default {
   background-color: @--lc-button-bg-color-default;
   color: lighten(@--lc-button-text-color-dark, 35%);
   border-color: darken(@--lc-button-bg-color-default, 15%);
   transition: @--lc-button-background-transition;
+  .lc-button-loading {
+    fill: lighten(@--lc-button-text-color-dark, 15%);
+  }
   &:hover {
     color: @--lc-button-bg-color-primary;
     border-color: @--lc-button-bg-color-primary;
@@ -99,6 +102,14 @@
   }
 }
 
+.dark {
+  .lc-button-default {
+    &:disabled {
+      color: lighten(@--lc-button-text-color-dark, 100%);
+    }
+  }
+}
+
 /** 循环生成类 */
 .generate-class(@i) when(@i>0) {
   @name: extract(@types, @i);
@@ -107,6 +118,9 @@
     background-color: @color;
     border-color: @color;
     transition: @--lc-button-background-transition;
+    .lc-button-loading {
+      fill: @--lc-button-text-color-white;
+    }
     &:hover {
       background-color: lighten(@color, 5%);
     }
@@ -124,6 +138,9 @@
     &.lc-button-plain {
       background-color: rgba(@color, 10%);
       color: darken(@color, 10%);
+      .lc-button-loading {
+        fill: darken(@color, 10%);
+      }
       &:hover {
         background-color: @color;
         color: @--lc-button-text-color-white;
