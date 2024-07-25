@@ -10,6 +10,12 @@ export const customColorComputed = (color: string) => {
   const isHex = color && isHexColor(color)
   if (!isHex) {
     console.error(`LcButton Error\n${color} is not a hex color `)
+    return {
+      hoverBgColor: '',
+      activeBgColor: '',
+      disabledBgColor: '',
+      plainBgColor: ''
+    }
   }
   //custom color hover cumputed
   const hoverBgColor = computed(() => {

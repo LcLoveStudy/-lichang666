@@ -22,9 +22,14 @@
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)
-  const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = customColorComputed(
-    props.color as string
-  )
+  const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = props.color
+    ? customColorComputed(props.color as string)
+    : {
+        hoverBgColor: '',
+        activeBgColor: '',
+        disabledBgColor: '',
+        plainBgColor: ''
+      }
 </script>
 
 <style lang="less" scoped>
