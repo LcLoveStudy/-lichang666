@@ -182,8 +182,10 @@
         <lc-button color="#9333ea">custom</lc-button>
         <lc-button color="#9333ea" disabled>disabled</lc-button>
         <lc-button color="#9333ea" plain>plain</lc-button>
+        <lc-button color="#9333ea" plain loading>plain</lc-button>
         <lc-button color="#9333ea" loading>plain</lc-button>
         <lc-button color="#9333ea" round>plain</lc-button>
+        <lc-button color="#9333ea" circle loading></lc-button>
     </div>
 </lc-card>
 
@@ -193,8 +195,10 @@
     <lc-button color="#9333ea">custom</lc-button>
     <lc-button color="#9333ea" disabled>disabled</lc-button>
     <lc-button color="#9333ea" plain>plain</lc-button>
+    <lc-button color="#9333ea" plain loading>plain</lc-button>
     <lc-button color="#9333ea" loading>plain</lc-button>
     <lc-button color="#9333ea" round>plain</lc-button>
+    <lc-button color="#9333ea" circle loading></lc-button>
   </div>
 </template>
 <script setup lang="ts">
