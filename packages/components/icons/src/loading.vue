@@ -1,7 +1,7 @@
 <template>
   <svg
     t="1720604786367"
-    class="icon"
+    class="lc-icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +57,16 @@
     size: {
       type: Number,
       default: 16
+    },
+    color: {
+      type: String,
+      default: 'inhert'
     }
   })
 </script>
+
+<style lang="less" scoped>
+  .lc-icon {
+    fill: v-bind(color);
+  }
+</style>

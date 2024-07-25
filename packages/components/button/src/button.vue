@@ -11,14 +11,14 @@
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" />
+      <loading-icon class="lc-button-loading" v-show="loading" color="#1d4ed8" />
       <slot></slot>
     </div>
   </button>
 </template>
 
 <script setup lang="ts">
-  import LoadingIcon from '../../icons/loading.vue'
+  import { LoadingIcon } from '../../icons'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)
