@@ -1,3 +1,4 @@
+@import '../../design/var.less';
 @--lc-button-padding:0.3rem 1.2rem;
 @--lc-button-radius: 0.3rem;
 @--lc-button-text-color-white: #fff;
@@ -5,11 +6,8 @@
 @--lc-button-background-transition:background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,color 0.15s ease-in-out;
 @--lc-button-shadow-transition: 0.5s;
 /** 颜色列表 */
-@--lc-button-bg-color-primary: #3b82f6;
-@--lc-button-bg-color-warning: #f59e0b;
-@--lc-button-bg-color-error: #ef4444;
 @--lc-button-bg-color-default: #fff;
-@colors: @--lc-button-bg-color-primary, @--lc-button-bg-color-warning, @--lc-button-bg-color-error;
+@colors: @--lc-color-primary, @--lc-color-warning, @--lc-color-error;
 @types: primary, warning, error;
 
 /** 基础类 */
@@ -85,14 +83,14 @@
     fill: lighten(@--lc-button-text-color-dark, 15%);
   }
   &:hover {
-    color: @--lc-button-bg-color-primary;
-    border-color: @--lc-button-bg-color-primary;
+    color: @--lc-color-primary;
+    border-color: @--lc-color-primary;
   }
   &::after {
-    box-shadow: 0 0 10px lighten(@--lc-button-bg-color-primary, 15%);
+    box-shadow: 0 0 10px lighten(@--lc-color-primary, 15%);
   }
   &:active {
-    color: darken(@--lc-button-bg-color-primary, 15%);
+    color: darken(@--lc-color-primary, 15%);
   }
   &:disabled {
     color: lighten(@--lc-button-text-color-dark, 55%);
