@@ -1,8 +1,12 @@
 <template>
-  <div class="playground"></div>
+  <div class="playground">
+    <lc-text type="primary" disabled>111</lc-text>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { LcText } from '@lichang666/lc-design-vue'
+</script>
 
 <style scoped>
 .playground {

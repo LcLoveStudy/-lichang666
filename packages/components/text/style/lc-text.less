@@ -1,0 +1,21 @@
+@import '../../design/var.less';
+@colors: @--lc-color-default, @--lc-color-primary, @--lc-color-warning, @--lc-color-error;
+@types: default, primary, warning, error;
+.lc-text {
+  display: inline-block;
+  font-size: @--lc-font-size-base;
+}
+/** 循环生成类 */
+.generate-class(@i) when(@i>0) {
+  @name: extract(@types, @i);
+  .lc-text-@{name} {
+    @color: extract(@colors, @i);
+    color: @color;
+    &-disabled {
+      color: rgba(@color, 0.5);
+      cursor: not-allowed;
+    }
+  }
+  .generate-class(@i - 1);
+}
+.generate-class(length(@types));
