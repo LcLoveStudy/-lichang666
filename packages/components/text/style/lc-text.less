@@ -3,7 +3,19 @@
 @types: default, primary, warning, error;
 .lc-text {
   display: inline-block;
+  border: none;
   font-size: @--lc-font-size-base;
+  .lc-text-loading {
+    animation: loading 1s linear infinite;
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }
 /** 循环生成类 */
 .generate-class(@i) when(@i>0) {
@@ -14,6 +26,9 @@
     &-disabled {
       color: rgba(@color, 0.5);
       cursor: not-allowed;
+    }
+    .lc-text-loading {
+      fill: @color;
     }
   }
   .generate-class(@i - 1);

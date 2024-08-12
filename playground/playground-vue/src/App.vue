@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <lc-text type="primary" disabled>111</lc-text>
+    <lc-text type="warning" loading>111</lc-text>
   </div>
 </template>
 
