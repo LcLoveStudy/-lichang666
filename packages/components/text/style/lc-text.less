@@ -23,7 +23,7 @@
   .lc-text-@{name} {
     @color: extract(@colors, @i);
     color: @color;
-    &-disabled {
+    &:disabled {
       color: rgba(@color, 0.5);
       cursor: not-allowed;
     }
