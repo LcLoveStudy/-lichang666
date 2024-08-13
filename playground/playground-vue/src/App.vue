@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { LcText } from '@lichang666/lc-design-vue'
+import { LcText } from '@lichang666/design-vue'
 </script>
 
 <style scoped>

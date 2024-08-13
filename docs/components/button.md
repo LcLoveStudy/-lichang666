@@ -34,7 +34,7 @@
 </lc-card>
 
 <script setup lang="ts">
-    import {LcButton,LcCard} from '@lichang666/lc-design-vue'
+    import {LcButton,LcCard} from '@lichang666/design-vue'
 </script>
 
 ```vue
@@ -65,7 +65,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/lc-design-vue'
+  import { LcButton } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -104,7 +104,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/lc-design-vue'
+  import { LcButton } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -130,7 +130,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/lc-design-vue'
+  import { LcButton } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -169,7 +169,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/lc-design-vue'
+  import { LcButton } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -202,7 +202,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/lc-design-vue'
+  import { LcButton } from '@lichang666/design-vue'
 </script>
 ```
 

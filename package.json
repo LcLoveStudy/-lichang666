@@ -8,8 +8,7 @@
     "docs:build": "pnpm install && cd ./docs && pnpm vitepress build ./"
   },
   "dependencies": {
-    "@lichang666/hooks-vue": "workspace:^",
-    "@lichang666/lc-design-vue": "workspace:^",
+    "@lichang666/design-vue": "workspace:^",
     "@lichang666/utils": "workspace:^",
     "prettier": "^3.3.2",
     "vitepress": "^1.3.0"
