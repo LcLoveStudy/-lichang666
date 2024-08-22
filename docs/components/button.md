@@ -221,10 +221,9 @@
 
 <style>
 .show-box{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:10px;
-    margin-bottom:10px;
+    display:flex;
+    margin-bottom:1rem;
+    flex-wrap:wrap;
 }
 .show-box:last-child{
     margin-bottom:0;
