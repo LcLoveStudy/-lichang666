@@ -110,9 +110,9 @@
     &:disabled {
       color: lighten(@--lc-button-text-color-dark, 60%);
     }
-  }
-  &.lc-button-text:has(.lc-button-loading) {
-    color: lighten(@--lc-button-text-color-dark, 60%);
+    &:has(.lc-button-loading) {
+      color: lighten(@--lc-button-text-color-dark, 60%);
+    }
   }
 }
 
@@ -120,6 +120,15 @@
   .lc-button-default {
     &:disabled {
       color: lighten(@--lc-button-text-color-dark, 100%);
+    }
+    &.lc-button-text {
+      color: lighten(@--lc-button-text-color-dark, 60%);
+      .lc-button-loading {
+        fill: lighten(@--lc-button-text-color-dark, 60%);
+      }
+      &:has(.lc-button-loading) {
+        color: lighten(@--lc-button-text-color-dark, 35%);
+      }
     }
   }
 }

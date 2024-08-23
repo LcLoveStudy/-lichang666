@@ -12,7 +12,7 @@
     :disabled="disabled || loading"
   >
     <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" />
+      <loading-icon class="lc-button-loading" v-if="loading" />
       <slot></slot>
     </div>
   </button>
