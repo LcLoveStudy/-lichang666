@@ -1,11 +1,11 @@
 <template>
   <div class="playground">
-    <lc-text color="#8b5cf6" disabled>111</lc-text>
+    <lc-button text type="primary" disabled>111</lc-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { LcText } from '@lichang666/design-vue'
+import { LcButton } from '@lichang666/design-vue'
 </script>
 
 <style scoped>

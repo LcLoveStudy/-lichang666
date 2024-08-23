@@ -5,6 +5,10 @@ export const buttonProps = {
     type: String as PropType<'primary' | 'warning' | 'error' | 'default'>,
     default: 'default'
   },
+  text: {
+    type: Boolean,
+    default: false
+  },
   plain: {
     type: Boolean,
     default: false

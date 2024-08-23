@@ -15,7 +15,9 @@
   border: none;
   font-size: 1rem;
   color: @--lc-button-text-color-white;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: @--lc-button-padding;
   border-radius: @--lc-button-radius;
   border: 1px solid;
@@ -36,11 +38,6 @@
   }
   &:disabled::after {
     opacity: 0;
-  }
-  &-content {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
   &-loading {
     margin-right: 10px;
@@ -98,6 +95,23 @@
     background-color: rgba(@--lc-button-bg-color-default, 0.6);
     cursor: not-allowed;
   }
+  // 文字按钮
+  &.lc-button-text {
+    background-color: transparent;
+    border-color: transparent;
+    &::after {
+      box-shadow: none;
+    }
+    .lc-button-loading {
+      fill: darken(@--lc-button-text-color-dark, 10%);
+    }
+    &:disabled {
+      color: darken(@--lc-button-text-color-dark, 10%);
+    }
+  }
+  &.lc-button-text:has(.lc-button-loading) {
+    color: lighten(@--lc-button-text-color-dark, 40%);
+  }
 }
 
 .dark {
@@ -149,6 +163,24 @@
         color: rgba(@color, 0.6);
         cursor: not-allowed;
       }
+    }
+    // 文字按钮
+    &.lc-button-text {
+      color: @color;
+      background-color: transparent;
+      border-color: transparent;
+      &::after {
+        box-shadow: none;
+      }
+      .lc-button-loading {
+        fill: darken(@color, 10%);
+      }
+      &:disabled {
+        color: rgba(@color, 0.6);
+      }
+    }
+    &.lc-button-text:has(.lc-button-loading) {
+      color: lighten(@color, 10%);
     }
   }
   .generate-class(@i - 1);
