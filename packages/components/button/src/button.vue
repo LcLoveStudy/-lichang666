@@ -3,17 +3,16 @@
     class="lc-button"
     :class="[
       color ? 'lc-button-custom' : type ? `lc-button-${type}` : 'lc-button-default',
-      { 'lc-button-plain': plain },
-      { 'lc-button-round': round },
-      { 'lc-button-circle': circle }
+      { 'lc-button-plain': plain && !text },
+      { 'lc-button-round': round && !text },
+      { 'lc-button-circle': circle && !text },
+      { 'lc-button-text': text }
     ]"
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
-    <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" />
-      <slot></slot>
-    </div>
+    <loading-icon class="lc-button-loading" v-if="loading" />
+    <slot></slot>
   </button>
 </template>
 
