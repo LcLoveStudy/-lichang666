@@ -108,6 +108,45 @@
 </script>
 ```
 
+## 文字按钮
+
+你可以使用 `text` 属性来定义按钮是文字按钮。当设置为文字按钮时`plain` `round` `circle` 属性将会失效
+
+<lc-card style="width:100%">
+    <div class="show-box">
+        <lc-button text>default</lc-button>
+        <lc-button type="primary" text>primary</lc-button>
+        <lc-button type="error" text>error</lc-button>
+        <lc-button type="warning" text>warning</lc-button>
+    </div>
+     <div class="show-box">
+        <lc-button text loading>default</lc-button>
+        <lc-button type="primary" text loading>primary</lc-button>
+        <lc-button type="error" text loading>error</lc-button>
+        <lc-button type="warning" text loading>warning</lc-button>
+    </div>
+</lc-card>
+
+```vue
+<template>
+  <div class="show-box">
+    <lc-button text>default</lc-button>
+    <lc-button type="primary" text>primary</lc-button>
+    <lc-button type="error" text>error</lc-button>
+    <lc-button type="warning" text>warning</lc-button>
+  </div>
+  <div class="show-box">
+    <lc-button text loading>default</lc-button>
+    <lc-button type="primary" text loading>primary</lc-button>
+    <lc-button type="error" text loading>error</lc-button>
+    <lc-button type="warning" text loading>warning</lc-button>
+  </div>
+</template>
+<script setup lang="ts">
+  import { LcButton } from '@lichang666/design-vue'
+</script>
+```
+
 ## 文字间距
 
 你可以使用 `textSpace` 属性来定义按钮文字之间的间距。
@@ -180,6 +219,7 @@
 <lc-card style="width:100%">
     <div class="show-box">
         <lc-button color="#9333ea">custom</lc-button>
+        <lc-button color="#9333ea" text>custom</lc-button>
         <lc-button color="#9333ea" disabled>disabled</lc-button>
         <lc-button color="#9333ea" plain>plain</lc-button>
         <lc-button color="#9333ea" plain loading>plain</lc-button>
@@ -193,6 +233,7 @@
 <template>
   <div class="show-box">
     <lc-button color="#9333ea">custom</lc-button>
+    <lc-button color="#9333ea" text>custom</lc-button>
     <lc-button color="#9333ea" disabled>disabled</lc-button>
     <lc-button color="#9333ea" plain>plain</lc-button>
     <lc-button color="#9333ea" plain loading>plain</lc-button>
