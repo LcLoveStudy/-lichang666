@@ -224,6 +224,7 @@
     display:flex;
     margin-bottom:1rem;
     flex-wrap:wrap;
+    gap:1rem;
 }
 .show-box:last-child{
     margin-bottom:0;
