@@ -11,8 +11,10 @@
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
-    <loading-icon class="lc-button-loading" v-if="loading" />
-    <slot></slot>
+    <div class="lc-button-content">
+      <loading-icon class="lc-button-loading" v-show="loading" />
+      <slot></slot>
+    </div>
   </button>
 </template>
 

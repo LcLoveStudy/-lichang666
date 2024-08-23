@@ -1,8 +1,6 @@
 <template>
   <div class="playground">
-    <lc-button color="#9333ea" text type="primary" disabled>111</lc-button>
-    <lc-button color="#9333ea" text type="primary">111</lc-button>
-    <lc-button color="#9333ea" text type="primary" loading>111</lc-button>
+    <lc-button circle type="primary" loading></lc-button>
   </div>
 </template>
 

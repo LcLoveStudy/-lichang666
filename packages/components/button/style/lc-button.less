@@ -15,9 +15,7 @@
   border: none;
   font-size: 1rem;
   color: @--lc-button-text-color-white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   padding: @--lc-button-padding;
   border-radius: @--lc-button-radius;
   border: 1px solid;
@@ -31,6 +29,10 @@
     border-radius: inherit;
     opacity: 0;
     transition: @--lc-button-shadow-transition;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
   }
   &:active::after {
     opacity: 1;
@@ -64,7 +66,7 @@
     width: 2rem;
     height: 2rem;
     overflow: hidden;
-    & .lc-button-loading {
+    .lc-button-loading {
       margin-right: 0;
     }
   }
