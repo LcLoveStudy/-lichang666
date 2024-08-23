@@ -35,6 +35,10 @@
   .lc-button-custom {
     background: v-bind(color);
     border-color: v-bind(color);
+    transition:
+      background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out,
+      color 0.15s ease-in-out;
     .lc-button-loading {
       fill: #fff;
     }
