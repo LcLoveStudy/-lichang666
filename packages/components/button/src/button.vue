@@ -70,5 +70,23 @@
         cursor: not-allowed;
       }
     }
+    // 文字按钮
+    &.lc-button-text {
+      color: v-bind(color);
+      background-color: transparent;
+      border-color: transparent;
+      &::after {
+        box-shadow: none;
+      }
+      .lc-button-loading {
+        fill: v-bind(color);
+      }
+      &:disabled {
+        color: v-bind(disabledBgColor);
+      }
+    }
+    &.lc-button-text:has(.lc-button-loading) {
+      color: v-bind(disabledBgColor);
+    }
   }
 </style>

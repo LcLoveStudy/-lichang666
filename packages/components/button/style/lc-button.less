@@ -106,11 +106,11 @@
       fill: darken(@--lc-button-text-color-dark, 10%);
     }
     &:disabled {
-      color: darken(@--lc-button-text-color-dark, 10%);
+      color: lighten(@--lc-button-text-color-dark, 60%);
     }
   }
   &.lc-button-text:has(.lc-button-loading) {
-    color: lighten(@--lc-button-text-color-dark, 40%);
+    color: lighten(@--lc-button-text-color-dark, 60%);
   }
 }
 
@@ -180,7 +180,7 @@
       }
     }
     &.lc-button-text:has(.lc-button-loading) {
-      color: lighten(@color, 10%);
+      color: rgba(@color, 0.6);
     }
   }
   .generate-class(@i - 1);
