@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import { LoadingIcon } from '../../icons'
+  import { LoadingIcon } from '@lichang666/design-vue'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)
