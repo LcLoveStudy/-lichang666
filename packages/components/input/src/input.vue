@@ -11,6 +11,7 @@
       :placeholder
       :type
       :disabled
+      :readonly
       :autofocus
       :autocomplete
       :rows="props.type === 'textarea' ? rows : undefined"

@@ -13,6 +13,10 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
+  readonly: {
+    type: Boolean,
+    default: false
+  },
   resize: {
     type: String as PropType<'none' | 'both' | 'horizontal' | 'vertical'>,
     default: 'vertical'
