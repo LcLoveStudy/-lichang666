@@ -1,13 +1,13 @@
 <template>
   <div class="playground">
-    <lc-input v-model="inputValue" type="password" readonly placeholder="请输入名称" />
+    <lc-input v-model="inputValue" placeholder="请输入名称" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { LcInput } from '@lichang666/design-vue'
-const inputValue = ref('')
+const inputValue = ref('33333')
 </script>
 
 <style scoped>

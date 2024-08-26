@@ -7,7 +7,7 @@
         resize: resizeStyle
       }"
       class="lc-input__inner"
-      v-model="inputValue"
+      :value="inputValue"
       :placeholder
       :type
       :disabled
@@ -41,7 +41,11 @@
   const resizeStyle = computed(() => (props.type === 'textarea' ? props.resize : 'none'))
 
   /** input event */
-  const inputEventHandler = () => emits('input', inputValue.value)
+  const inputEventHandler = () => {
+    if (!inputRef.value) return
+    inputValue.value = inputRef.value.value
+    emits('input', inputValue.value)
+  }
 
   /** blur event */
   const blurEventHandler = (e: FocusEvent) => emits('blur', e)
