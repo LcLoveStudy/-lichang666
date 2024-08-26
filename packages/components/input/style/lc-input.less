@@ -28,7 +28,7 @@
     min-height: @--lc-input-height;
   }
   &__inner {
-    background: transparent;
+    background: @--lc-color-white;
     min-width: 3rem;
     width: 100%;
     height: 100%;
@@ -52,6 +52,10 @@
       padding: @--lc-input-textarea-padding;
       min-height: @--lc-input-height;
       line-height: 1.5;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background: @--lc-border-color-gay;
     }
   }
 }

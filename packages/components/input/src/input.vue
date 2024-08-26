@@ -10,6 +10,7 @@
       v-model="inputValue"
       :placeholder
       :type
+      :disabled
       :autofocus
       :autocomplete
       :rows="props.type === 'textarea' ? rows : undefined"

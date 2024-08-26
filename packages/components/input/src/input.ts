@@ -9,6 +9,10 @@ export const inputProps = {
     type: String as PropType<'text' | 'textarea' | 'password'>,
     default: 'text'
   },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
   resize: {
     type: String as PropType<'none' | 'both' | 'horizontal' | 'vertical'>,
     default: 'vertical'
