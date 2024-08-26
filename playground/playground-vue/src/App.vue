@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LcInput } from '@lichang666/design-vue'
+import { LcInput, CloseFullIcon } from '@lichang666/design-vue'
 const inputValue = ref('33333')
 </script>
 
