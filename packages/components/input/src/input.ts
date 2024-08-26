@@ -12,6 +12,14 @@ export const inputProps = {
   resize: {
     type: String as PropType<'none' | 'both' | 'horizontal' | 'vertical'>,
     default: 'vertical'
+  },
+  rows: {
+    type: Number,
+    default: 2
+  },
+  cols: {
+    type: Number,
+    default: 20
   }
 }
 export type LcInputProps = Readonly<typeof inputProps>

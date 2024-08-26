@@ -10,6 +10,8 @@
       v-model="inputValue"
       :placeholder
       :type
+      :rows="props.type === 'textarea' ? rows : undefined"
+      :cols="props.type === 'textarea' ? cols : undefined"
       @input="inputEventHandler"
       @blur="blurEventHandler"
       @focus="focusEventHandler"
