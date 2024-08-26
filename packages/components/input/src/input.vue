@@ -14,6 +14,7 @@
       :readonly
       :autofocus
       :autocomplete
+      :maxlength
       :rows="props.type === 'textarea' ? rows : undefined"
       :cols="props.type === 'textarea' ? cols : undefined"
       @input="inputEventHandler"
@@ -24,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, ref } from 'vue'
+  import { computed, ref, watchEffect } from 'vue'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
   const emits = defineEmits(['input', 'blur', 'focus'])

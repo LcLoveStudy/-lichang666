@@ -17,6 +17,10 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
+  maxlength: {
+    type: [Number, String],
+    default: undefined
+  },
   resize: {
     type: String as PropType<'none' | 'both' | 'horizontal' | 'vertical'>,
     default: 'vertical'
