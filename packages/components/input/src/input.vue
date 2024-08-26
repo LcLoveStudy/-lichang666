@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, ref, watchEffect } from 'vue'
+  import { computed, ref } from 'vue'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
   const emits = defineEmits(['input', 'blur', 'focus'])
