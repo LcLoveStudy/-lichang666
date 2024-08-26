@@ -22,13 +22,14 @@
       @focus="focusEventHandler"
     />
     <div class="lc-input__count" v-if="showCountComputed">
-      {{ inputValue.length }} / {{ maxlength }}
+      {{ countStringComputed }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import { computed, ref } from 'vue'
+  import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
   const emits = defineEmits(['input', 'blur', 'focus'])
@@ -44,6 +45,10 @@
   /** computed count show */
   const showCountComputed = computed(() => {
     return props.showCount && props.maxlength && props.type !== 'password'
+  })
+  /** computed count string */
+  const countStringComputed = computed(() => {
+    return `${unicodeSize(inputValue.value)} / ${props.maxlength}`
   })
 
   /** textarea resize */
