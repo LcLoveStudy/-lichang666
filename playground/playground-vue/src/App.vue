@@ -1,11 +1,13 @@
 <template>
   <div class="playground">
-    <lc-button circle type="primary" loading></lc-button>
+    <lc-input v-model="inputValue" placeholder="请输入名称" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { LcButton } from '@lichang666/design-vue'
+import { ref } from 'vue'
+import { LcInput } from '@lichang666/design-vue'
+const inputValue = ref('')
 </script>
 
 <style scoped>
