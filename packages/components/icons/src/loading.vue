@@ -6,6 +6,7 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     p-id="6092"
+    :fill="color"
     :width="size"
     :height="size"
   >
@@ -59,14 +60,7 @@
       default: 16
     },
     color: {
-      type: String,
-      default: 'inhert'
+      type: String
     }
   })
 </script>
-
-<style lang="less" scoped>
-  .lc-icon {
-    fill: v-bind(color);
-  }
-</style>
