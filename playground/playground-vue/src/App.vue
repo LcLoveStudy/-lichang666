@@ -1,12 +1,12 @@
 <template>
   <div class="playground">
-    <lc-input v-model="inputValue" maxlength="30" show-count placeholder="请输入名称" />
+    <lc-input v-model="inputValue" maxlength="30" clearable placeholder="请输入名称" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LcInput, CloseFullIcon } from '@lichang666/design-vue'
+import { LcInput } from '@lichang666/design-vue'
 const inputValue = ref('33333')
 </script>
 

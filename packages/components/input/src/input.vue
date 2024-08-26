@@ -1,5 +1,5 @@
 <template>
-  <div class="lc-input">
+  <div class="lc-input" @click="inputFocus">
     <component
       :is="compIs"
       ref="inputRef"
@@ -24,10 +24,14 @@
     <div class="lc-input__count" v-if="showCountComputed">
       {{ countStringComputed }}
     </div>
+    <div class="lc-input__clear" v-if="clearIconShow">
+      <CloseFullIcon @click="clearInputValue" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { CloseFullIcon } from '@lichang666/design-vue'
   import { computed, ref } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
@@ -38,13 +42,28 @@
     required: true
   })
   const inputRef = ref<HTMLInputElement>()
+  /** blur input */
+  const inputBlur = () => {
+    if (!inputRef.value) return
+    inputRef.value.blur()
+  }
+  /** focus input*/
+  const inputFocus = () => {
+    if (!inputRef.value) return
+    inputRef.value.focus()
+  }
 
   /** computed is input or textarea element */
   const compIs = computed(() => (props.type !== 'textarea' ? 'input' : 'textarea'))
 
+  /** computed show of clearIcon */
+  const clearIconShow = computed(() => {
+    return props.clearable && inputValue.value
+  })
+
   /** computed count show */
   const showCountComputed = computed(() => {
-    return props.showCount && props.maxlength && props.type !== 'password'
+    return props.showCount && props.maxlength && props.type !== 'password' && !props.clearable
   })
   /** computed count string */
   const countStringComputed = computed(() => {
@@ -61,6 +80,13 @@
     emits('input', inputValue.value)
   }
 
+  /** clear input value */
+  const clearInputValue = () => {
+    if (!inputRef.value) return
+    inputRef.value.value = ''
+    inputEventHandler()
+  }
+
   /** blur event */
   const blurEventHandler = (e: FocusEvent) => emits('blur', e)
 
@@ -68,13 +94,7 @@
   const focusEventHandler = (e: FocusEvent) => emits('focus', e)
 
   defineExpose({
-    blur: () => {
-      if (!inputRef.value) return
-      inputRef.value.blur()
-    },
-    focus: () => {
-      if (!inputRef.value) return
-      inputRef.value.focus()
-    }
+    blur: inputBlur,
+    focus: inputFocus
   })
 </script>

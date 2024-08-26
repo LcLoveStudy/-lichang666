@@ -65,6 +65,17 @@
     font-size: calc(@--lc-input-font-size * 0.9);
     color: @--lc-input-color-border-default;
   }
+  &__clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    .lc-icon {
+      width: @--lc-input-font-size;
+      height: @--lc-input-font-size;
+      cursor: pointer;
+    }
+  }
   &:has(.lc-input__inner[type='textarea']) {
     position: relative;
     padding-right: 0;
