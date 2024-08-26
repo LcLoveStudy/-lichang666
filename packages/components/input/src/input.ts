@@ -20,6 +20,14 @@ export const inputProps = {
   cols: {
     type: Number,
     default: 20
+  },
+  autofocus: {
+    type: Boolean,
+    default: false
+  },
+  autocomplete: {
+    type: String as PropType<'off' | 'on'>,
+    default: false
   }
 }
 export type LcInputProps = Readonly<typeof inputProps>
