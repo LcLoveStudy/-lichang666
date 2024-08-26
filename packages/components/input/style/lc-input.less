@@ -8,14 +8,19 @@
 @--lc-input-height: 2rem;
 @--lc-input-rounded: 3px;
 .lc-input {
+  position: relative;
+  background: @--lc-color-white;
   max-width: 100%;
+  width: 15rem;
   min-width: 3rem;
   height: @--lc-input-height;
   line-height: @--lc-input-height;
   display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
   border: 1px solid @--lc-input-color-border-default;
   border-radius: @--lc-input-rounded;
+  padding: @--lc-input-padding;
   transition: all 0.2s;
   &:hover {
     border: 1px solid darken(@--lc-input-color-border-default, 10%);
@@ -23,18 +28,13 @@
   &:has(.lc-input__inner:focus) {
     border: 1px solid @--lc-color-primary;
   }
-  &:has(.lc-input__inner[type='textarea']) {
-    height: auto;
-    min-height: @--lc-input-height;
-  }
   &__inner {
-    background: @--lc-color-white;
+    background: transparent;
     min-width: 3rem;
-    width: 100%;
+    flex: 1;
     height: 100%;
     border: none;
     outline: none;
-    padding: @--lc-input-padding;
     color: @--lc-input-color-font;
     font-size: @--lc-input-font-size;
     font-weight: normal;
@@ -57,6 +57,25 @@
     &:read-only {
       cursor: not-allowed;
       background: @--lc-border-color-gay;
+    }
+  }
+  &__count {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: calc(@--lc-input-font-size * 0.9);
+    color: @--lc-input-color-border-default;
+  }
+  &:has(.lc-input__inner[type='textarea']) {
+    position: relative;
+    padding-right: 0;
+    height: auto;
+    min-height: @--lc-input-height;
+    .lc-input__count {
+      position: absolute;
+      color: @--lc-input-color-font;
+      right: 0;
+      line-height: 1;
+      bottom: calc(@--lc-input-font-size * -1.2);
     }
   }
 }

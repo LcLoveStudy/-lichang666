@@ -21,6 +21,9 @@
       @blur="blurEventHandler"
       @focus="focusEventHandler"
     />
+    <div class="lc-input__count" v-if="showCountComputed">
+      {{ inputValue.length }} / {{ maxlength }}
+    </div>
   </div>
 </template>
 
@@ -37,6 +40,11 @@
 
   /** computed is input or textarea element */
   const compIs = computed(() => (props.type !== 'textarea' ? 'input' : 'textarea'))
+
+  /** computed count show */
+  const showCountComputed = computed(() => {
+    return props.showCount && props.maxlength && props.type !== 'password'
+  })
 
   /** textarea resize */
   const resizeStyle = computed(() => (props.type === 'textarea' ? props.resize : 'none'))

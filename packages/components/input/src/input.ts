@@ -21,6 +21,10 @@ export const inputProps = {
     type: [Number, String],
     default: undefined
   },
+  showCount: {
+    type: Boolean,
+    default: false
+  },
   resize: {
     type: String as PropType<'none' | 'both' | 'horizontal' | 'vertical'>,
     default: 'vertical'
