@@ -73,12 +73,18 @@
 
   /** computed show of clearIcon */
   const clearIconShow = computed(() => {
-    return props.clearable && inputValue.value
+    return (
+      props.clearable &&
+      inputValue.value &&
+      !props.disabled &&
+      !props.readonly &&
+      !props.showPassword
+    )
   })
 
   /** computed count show */
   const showCountComputed = computed(() => {
-    return props.showCount && props.maxlength && !props.clearable
+    return props.showCount && props.maxlength && !props.clearable && !props.showPassword
   })
   /** computed count string */
   const countStringComputed = computed(() => {
