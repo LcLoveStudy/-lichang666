@@ -36,7 +36,7 @@
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
-  const emits = defineEmits(['input', 'blur', 'focus'])
+  const emits = defineEmits(['input', 'blur', 'focus', 'clear'])
   const inputValue = defineModel({
     type: String,
     required: true
@@ -85,6 +85,7 @@
     if (!inputRef.value || props.disabled) return
     inputRef.value.value = ''
     inputEventHandler()
+    emits('clear')
   }
 
   /** blur event */
