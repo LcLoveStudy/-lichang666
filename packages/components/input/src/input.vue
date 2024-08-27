@@ -21,11 +21,11 @@
       @blur="blurEventHandler"
       @focus="focusEventHandler"
     />
-    <div class="lc-input__count" v-if="showCountComputed">
-      {{ countStringComputed }}
-    </div>
-    <div class="lc-input__clear" v-if="clearIconShow">
-      <CloseFullIcon @click="clearInputValue" />
+    <div class="lc-input__suffix">
+      <div class="lc-input__count" v-if="showCountComputed">
+        {{ countStringComputed }}
+      </div>
+      <CloseFullIcon @click="clearInputValue" v-if="clearIconShow" />
     </div>
   </div>
 </template>
@@ -82,7 +82,7 @@
 
   /** clear input value */
   const clearInputValue = () => {
-    if (!inputRef.value) return
+    if (!inputRef.value || props.disabled) return
     inputRef.value.value = ''
     inputEventHandler()
   }
