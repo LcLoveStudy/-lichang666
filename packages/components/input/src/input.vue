@@ -26,12 +26,14 @@
         {{ countStringComputed }}
       </div>
       <CloseFullIcon class="lc-input__clear" @click="clearInputValue" v-if="clearIconShow" />
+      <ViewIcon @click="viewClickHandler" color="#666" v-if="viewIconComputed" />
+      <HideIcon @click="viewClickHandler" color="#666" v-if="hideIconComputed" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { CloseFullIcon } from '@lichang666/design-vue'
+  import { CloseFullIcon, ViewIcon, HideIcon } from '@lichang666/design-vue'
   import { computed, ref } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
@@ -63,7 +65,7 @@
 
   /** computed count show */
   const showCountComputed = computed(() => {
-    return props.showCount && props.maxlength && props.type !== 'password' && !props.clearable
+    return props.showCount && props.maxlength && !props.clearable
   })
   /** computed count string */
   const countStringComputed = computed(() => {
@@ -72,6 +74,20 @@
 
   /** textarea resize */
   const resizeStyle = computed(() => (props.type === 'textarea' ? props.resize : 'none'))
+
+  const showViewIcon = ref(false)
+  /** click view-icon */
+  const viewClickHandler = () => {
+    if (!inputRef.value) return
+    inputRef.value.type = inputRef.value.type === 'password' ? 'text' : 'password'
+    showViewIcon.value = !showViewIcon.value
+  }
+  const viewIconComputed = computed(() => {
+    return props.type === 'password' && showViewIcon.value
+  })
+  const hideIconComputed = computed(() => {
+    return props.type === 'password' && !showViewIcon.value
+  })
 
   /** input event */
   const inputEventHandler = () => {
