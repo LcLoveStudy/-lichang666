@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-  import { CloseFullIcon, ViewIcon, HideIcon } from '@lichang666/design-vue'
+  import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon } from '@lichang666/design-vue'
   import { computed, ref } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
