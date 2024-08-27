@@ -17,6 +17,10 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
+  showPassword: {
+    type: Boolean,
+    default: true
+  },
   readonly: {
     type: Boolean,
     default: false

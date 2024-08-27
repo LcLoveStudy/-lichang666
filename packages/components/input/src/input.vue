@@ -83,10 +83,10 @@
     showViewIcon.value = !showViewIcon.value
   }
   const viewIconComputed = computed(() => {
-    return props.type === 'password' && showViewIcon.value
+    return props.type === 'password' && showViewIcon.value && props.showPassword
   })
   const hideIconComputed = computed(() => {
-    return props.type === 'password' && !showViewIcon.value
+    return props.type === 'password' && !showViewIcon.value && props.showPassword
   })
 
   /** input event */
