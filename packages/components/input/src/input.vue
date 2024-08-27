@@ -22,12 +22,20 @@
       @focus="focusEventHandler"
     />
     <div class="lc-input__suffix">
+      <!-- count length -->
       <div class="lc-input__count" v-if="showCountComputed">
         {{ countStringComputed }}
       </div>
-      <CloseFullIcon class="lc-input__clear" @click="clearInputValue" v-if="clearIconShow" />
-      <ViewIcon @click="viewClickHandler" color="#666" v-if="viewIconComputed" />
-      <HideIcon @click="viewClickHandler" color="#666" v-if="hideIconComputed" />
+      <!-- clear value  -->
+      <CloseFullIcon
+        class="lc-input__clear"
+        :color="iconColorComputed"
+        @click="clearInputValue"
+        v-if="clearIconShow"
+      />
+      <!-- password view and hide -->
+      <ViewIcon @click="viewClickHandler" :color="iconColorComputed" v-show="viewIconComputed" />
+      <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
     </div>
   </div>
 </template>
@@ -58,6 +66,11 @@
   /** computed is input or textarea element */
   const compIs = computed(() => (props.type !== 'textarea' ? 'input' : 'textarea'))
 
+  /** icon disabeld color computed */
+  const iconColorComputed = computed(() => {
+    return props.disabled ? '#ccc' : '#666'
+  })
+
   /** computed show of clearIcon */
   const clearIconShow = computed(() => {
     return props.clearable && inputValue.value
@@ -78,7 +91,7 @@
   const showViewIcon = ref(false)
   /** click view-icon */
   const viewClickHandler = () => {
-    if (!inputRef.value) return
+    if (!inputRef.value || props.disabled || props.readonly) return
     inputRef.value.type = inputRef.value.type === 'password' ? 'text' : 'password'
     showViewIcon.value = !showViewIcon.value
   }
@@ -98,7 +111,7 @@
 
   /** clear input value */
   const clearInputValue = () => {
-    if (!inputRef.value || props.disabled) return
+    if (!inputRef.value || props.disabled || props.readonly) return
     inputRef.value.value = ''
     inputEventHandler()
     emits('clear')
