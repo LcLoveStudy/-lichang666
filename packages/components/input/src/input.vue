@@ -25,7 +25,7 @@
       <div class="lc-input__count" v-if="showCountComputed">
         {{ countStringComputed }}
       </div>
-      <CloseFullIcon @click="clearInputValue" v-if="clearIconShow" />
+      <CloseFullIcon class="lc-input__clear" @click="clearInputValue" v-if="clearIconShow" />
     </div>
   </div>
 </template>

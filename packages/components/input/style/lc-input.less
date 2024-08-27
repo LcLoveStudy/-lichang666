@@ -24,9 +24,15 @@
   transition: all 0.2s;
   &:hover {
     border: 1px solid darken(@--lc-input-color-border-default, 10%);
+    .lc-input__suffix .lc-input__clear {
+      opacity: 1;
+    }
   }
   &:has(.lc-input__inner:focus) {
     border: 1px solid @--lc-color-primary;
+    .lc-input__suffix .lc-input__clear {
+      opacity: 1;
+    }
   }
   &__inner {
     background: transparent;
@@ -38,7 +44,6 @@
     color: @--lc-input-color-font;
     font-size: @--lc-input-font-size;
     font-weight: normal;
-    border-radius: @--lc-input-rounded;
     &::placeholder {
       color: @--lc-input-color-placeholder;
       font-size: @--lc-input-font-size;
@@ -76,6 +81,10 @@
       width: @--lc-input-font-size;
       height: @--lc-input-font-size;
       cursor: pointer;
+    }
+    .lc-input__clear {
+      opacity: 0;
+      transition: all 0.2s;
     }
     .lc-input__count {
       font-size: calc(@--lc-input-font-size * 0.9);
