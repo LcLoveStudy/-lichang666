@@ -1,50 +1,53 @@
 <template>
   <div class="lc-input" @click="inputFocus">
-    <component
-      :is="compIs"
-      ref="inputRef"
-      :style="{
-        resize: resizeStyle
-      }"
-      class="lc-input__inner"
-      :value="inputValue"
-      :placeholder
-      :type
-      :disabled
-      :readonly
-      :autofocus
-      :autocomplete
-      :maxlength
-      :rows="props.type === 'textarea' ? rows : undefined"
-      :cols="props.type === 'textarea' ? cols : undefined"
-      @input="inputEventHandler"
-      @blur="blurEventHandler"
-      @focus="focusEventHandler"
-    />
-    <div
-      class="lc-input__suffix"
-      v-if="showCountComputed || clearIconShow || viewIconComputed || hideIconComputed"
-    >
-      <!-- count length -->
-      <div class="lc-input__count" v-if="showCountComputed">
-        {{ countStringComputed }}
-      </div>
-      <!-- clear value  -->
-      <CloseFullIcon
-        class="lc-input__clear"
-        :color="iconColorComputed"
-        @click="clearInputValue"
-        v-if="clearIconShow"
+    <div class="lc-input__wrapper">
+      <component
+        :is="compIs"
+        ref="inputRef"
+        :style="{
+          resize: resizeStyle
+        }"
+        class="lc-input__inner"
+        :value="inputValue"
+        :placeholder
+        :type
+        :disabled
+        :readonly
+        :autofocus
+        :autocomplete
+        :maxlength
+        :rows="props.type === 'textarea' ? rows : undefined"
+        :cols="props.type === 'textarea' ? cols : undefined"
+        @input="inputEventHandler"
+        @blur="blurEventHandler"
+        @focus="focusEventHandler"
       />
-      <!-- password view and hide -->
-      <ViewIcon @click="viewClickHandler" :color="iconColorComputed" v-show="viewIconComputed" />
-      <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
+      <div class="lc-input__suffix" v-if="suffixBoxComputed">
+        <!-- count length -->
+        <div class="lc-input__count" v-if="showCountComputed">
+          {{ countStringComputed }}
+        </div>
+        <!-- clear value  -->
+        <CloseFullIcon
+          class="lc-input__clear"
+          :color="iconColorComputed"
+          @click="clearInputValue"
+          v-if="clearIconShow"
+        />
+        <!-- password view and hide -->
+        <ViewIcon @click="viewClickHandler" :color="iconColorComputed" v-show="viewIconComputed" />
+        <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
+      </div>
     </div>
+    <!-- search -->
+    <lc-button class="lc-input__search" v-if="searchIconComputed" type="primary">
+      <SearchIcon />
+    </lc-button>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { CloseFullIcon, ViewIcon, HideIcon } from '@lichang666/design-vue'
+  import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon, LcButton } from '@lichang666/design-vue'
   import { computed, ref } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
@@ -68,6 +71,20 @@
 
   /** computed is input or textarea element */
   const compIs = computed(() => (props.type !== 'textarea' ? 'input' : 'textarea'))
+
+  /** suffix slot show */
+  const suffixBoxComputed = computed(() => {
+    return (
+      showCountComputed.value ||
+      clearIconShow.value ||
+      viewIconComputed.value ||
+      hideIconComputed.value
+    )
+  })
+  /** search icon show */
+  const searchIconComputed = computed(() => {
+    return props.type === 'text' && props.search
+  })
 
   /** icon disabeld color computed */
   const iconColorComputed = computed(() => {

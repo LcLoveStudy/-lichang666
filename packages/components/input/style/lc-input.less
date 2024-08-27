@@ -8,8 +8,6 @@
 @--lc-input-height: 2rem;
 @--lc-input-rounded: 3px;
 .lc-input {
-  position: relative;
-  background: @--lc-color-white;
   max-width: 100%;
   width: 15rem;
   min-width: 3rem;
@@ -17,37 +15,89 @@
   line-height: @--lc-input-height;
   display: inline-flex;
   align-items: center;
-  box-sizing: border-box;
-  border: 1px solid @--lc-input-color-border-default;
-  border-radius: @--lc-input-rounded;
-  transition: all 0.2s;
-  &:hover {
-    border: 1px solid darken(@--lc-input-color-border-default, 10%);
-    .lc-input__suffix .lc-input__clear {
-      opacity: 1;
+  font-weight: normal;
+  &__wrapper {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    background: @--lc-color-white;
+    border: 1px solid @--lc-input-color-border-default;
+    border-radius: @--lc-input-rounded;
+    transition: all 0.2s;
+    padding: @--lc-input-padding;
+    &:hover {
+      border: 1px solid darken(@--lc-input-color-border-default, 10%);
+      .lc-input__suffix .lc-input__clear {
+        opacity: 1;
+      }
     }
-  }
-  &:has(.lc-input__inner:focus) {
-    border: 1px solid @--lc-color-primary;
-    .lc-input__suffix .lc-input__clear {
-      opacity: 1;
+    &:has(.lc-input__inner:focus) {
+      border: 1px solid @--lc-color-primary;
+      .lc-input__suffix .lc-input__clear {
+        opacity: 1;
+      }
+    }
+    &:has(.lc-input__inner:disabled),
+    &:has(.lc-input__inner:read-only) {
+      cursor: not-allowed;
+      background: @--lc-border-color-gay;
+      border: 1px solid @--lc-input-color-border-default;
+      .lc-input__inner {
+        cursor: not-allowed;
+        color: @--lc-input-color-placeholder;
+      }
+      .lc-input__suffix .lc-icon {
+        cursor: not-allowed;
+      }
+    }
+    &:has(.lc-input__inner[type='textarea']) {
+      position: relative;
+      padding-right: 0;
+      height: auto;
+      min-height: @--lc-input-height;
+      .lc-input__suffix {
+        margin: 0;
+      }
+      .lc-input__count {
+        position: absolute;
+        color: @--lc-input-color-font;
+        right: 0;
+        line-height: 1;
+        bottom: calc(@--lc-input-font-size * -1.2);
+      }
+    }
+    .lc-input__suffix {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: @--lc-input-color-border-default;
+      margin: 0 0.3rem;
+      .lc-icon {
+        width: @--lc-input-font-size;
+        height: @--lc-input-font-size;
+        cursor: pointer;
+      }
+      .lc-input__clear {
+        opacity: 0;
+        transition: all 0.2s;
+      }
+      .lc-input__count {
+        font-size: calc(@--lc-input-font-size * 0.9);
+      }
     }
   }
   &__inner {
     background: transparent;
-    min-width: 3rem;
-    flex: 1;
     height: 100%;
+    flex: 1;
     border: none;
     outline: none;
     color: @--lc-input-color-font;
     font-size: @--lc-input-font-size;
-    font-weight: normal;
-    padding: @--lc-input-padding;
     &::placeholder {
       color: @--lc-input-color-placeholder;
       font-size: @--lc-input-font-size;
-      font-weight: normal;
     }
     &[type='password'] {
       font-size: @--lc-font-size-base;
@@ -59,50 +109,13 @@
       line-height: 1.5;
     }
   }
-  &:has(.lc-input__inner:disabled),
-  &:has(.lc-input__inner:read-only) {
-    cursor: not-allowed;
-    background: @--lc-border-color-gay;
-    .lc-input__inner {
-      cursor: not-allowed;
-      color: @--lc-input-color-placeholder;
-    }
-    .lc-input__suffix .lc-icon {
-      cursor: not-allowed;
-    }
-  }
-  &__suffix {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: @--lc-input-color-border-default;
+  &__search {
+    height: @--lc-input-height;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0;
     .lc-icon {
-      width: @--lc-input-font-size;
-      height: @--lc-input-font-size;
-      cursor: pointer;
-      margin-right: 0.5rem;
-    }
-    .lc-input__clear {
-      opacity: 0;
-      transition: all 0.2s;
-    }
-    .lc-input__count {
-      margin-right: 0.5rem;
-      font-size: calc(@--lc-input-font-size * 0.9);
-    }
-  }
-
-  &:has(.lc-input__inner[type='textarea']) {
-    position: relative;
-    padding-right: 0;
-    height: auto;
-    min-height: @--lc-input-height;
-    .lc-input__count {
-      position: absolute;
-      color: @--lc-input-color-font;
-      right: 0;
-      line-height: 1;
-      bottom: calc(@--lc-input-font-size * -1.2);
+      margin-right: 0;
     }
   }
 }

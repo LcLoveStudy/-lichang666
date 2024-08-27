@@ -9,6 +9,10 @@ export const inputProps = {
     type: String as PropType<'text' | 'textarea' | 'password'>,
     default: 'text'
   },
+  search: {
+    type: Boolean,
+    default: false
+  },
   clearable: {
     type: Boolean,
     default: false

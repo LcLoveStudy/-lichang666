@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <lc-input v-model="inputValue" type="password" placeholder="请输入名称" />
+    <lc-input v-model="inputValue" type="textarea" placeholder="请输入名称" />
   </div>
 </template>
 
