@@ -21,7 +21,10 @@
       @blur="blurEventHandler"
       @focus="focusEventHandler"
     />
-    <div class="lc-input__suffix">
+    <div
+      class="lc-input__suffix"
+      v-if="showCountComputed || clearIconShow || viewIconComputed || hideIconComputed"
+    >
       <!-- count length -->
       <div class="lc-input__count" v-if="showCountComputed">
         {{ countStringComputed }}
@@ -41,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-  import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon } from '@lichang666/design-vue'
+  import { CloseFullIcon, ViewIcon, HideIcon } from '@lichang666/design-vue'
   import { computed, ref } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
@@ -78,13 +81,13 @@
       inputValue.value &&
       !props.disabled &&
       !props.readonly &&
-      !props.showPassword
+      props.type === 'text'
     )
   })
 
   /** computed count show */
   const showCountComputed = computed(() => {
-    return props.showCount && props.maxlength && !props.clearable && !props.showPassword
+    return props.showCount && props.maxlength && !props.clearable && props.type !== 'password'
   })
   /** computed count string */
   const countStringComputed = computed(() => {
