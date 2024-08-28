@@ -39,15 +39,16 @@
         <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
       </div>
     </div>
-    <!-- search -->
-    <lc-button
-      class="lc-input__search"
-      v-if="searchIconComputed"
-      :disabled
-      :loading
-      @click="searchClickHandler"
-      :icon="SearchIcon"
-    />
+    <div class="lc-input__append">
+      <!-- search -->
+      <lc-button
+        v-if="searchIconComputed"
+        :disabled
+        :loading
+        @click="searchClickHandler"
+        :icon="SearchIcon"
+      />
+    </div>
   </div>
 </template>
 

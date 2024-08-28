@@ -109,18 +109,21 @@
       line-height: 1.5;
     }
   }
-  &__search {
+  &__append {
     height: @--lc-input-height;
-    padding: 0 1rem;
-    border-radius: 0;
-    border-left: none;
-    border-top-right-radius: @--lc-input-rounded;
-    border-bottom-right-radius: @--lc-input-rounded;
-    .lc-icon {
-      margin-right: 0;
+    .lc-button {
+      height: @--lc-input-height;
+      padding: 0 1rem;
+      border-radius: 0;
+      border-left: none;
+      border-top-right-radius: @--lc-input-rounded;
+      border-bottom-right-radius: @--lc-input-rounded;
+      .lc-icon {
+        margin-right: 0;
+      }
     }
   }
-  &:has(.lc-input__search) {
+  &:has(.lc-input__append) {
     .lc-input__wrapper {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
