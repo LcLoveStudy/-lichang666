@@ -8,35 +8,35 @@
 @--lc-input-height: 2rem;
 @--lc-input-rounded: 3px;
 .lc-input {
-  max-width: 100%;
   width: 15rem;
   min-width: 3rem;
   height: @--lc-input-height;
   line-height: @--lc-input-height;
   display: inline-flex;
   align-items: center;
-  font-weight: normal;
   font-size: @--lc-input-font-size;
   color: @--lc-input-color-font;
   &__wrapper {
     flex: 1;
     width: 100%;
     position: relative;
+    z-index: 2;
     height: 100%;
     display: inline-flex;
     background: @--lc-color-white;
-    box-shadow: 0 0 0 1px @--lc-input-color-border-default;
+    border: 1px solid @--lc-input-color-border-default;
     border-radius: @--lc-input-rounded;
     transition: all 0.2s;
     padding: @--lc-input-padding;
     &:hover {
-      box-shadow: 0 0 0 1px darken(@--lc-input-color-border-default, 10%);
+      border: 1px solid darken(@--lc-input-color-border-default, 10%);
       .lc-input__suffix .lc-input__clear {
         opacity: 1;
       }
     }
     &:has(.lc-input__inner:focus) {
-      box-shadow: 0 0 2px 1px @--lc-color-primary;
+      border: 1px solid @--lc-color-primary;
+      box-shadow: 0 0 2px 1px rgba(@--lc-color-primary, 0.5);
       .lc-input__suffix .lc-input__clear {
         opacity: 1;
       }
@@ -118,7 +118,8 @@
   }
   &__append,
   &__repend {
-    height: calc(@--lc-input-height + 2px);
+    z-index: 1;
+    height: @--lc-input-height;
     padding: @--lc-input-padding;
     border: 1px solid @--lc-input-color-border-default;
     background-color: lighten(@--lc-input-color-border-default, 10%);
@@ -134,33 +135,43 @@
     }
   }
   &__append {
+    margin-left: -1px;
     border-top-right-radius: @--lc-input-rounded;
     border-bottom-right-radius: @--lc-input-rounded;
     .lc-button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
+    &:has(.lc-button) {
+      &:hover {
+        z-index: 3;
+      }
+    }
   }
   &__repend {
+    margin-right: -1px;
     border-top-left-radius: @--lc-input-rounded;
     border-bottom-left-radius: @--lc-input-rounded;
     .lc-button {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
+    &:has(.lc-button) {
+      &:hover {
+        z-index: 3;
+      }
+    }
   }
   &:has(.lc-input__append) {
     .lc-input__wrapper {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      border-right: none;
     }
   }
   &:has(.lc-input__repend) {
     .lc-input__wrapper {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-left: none;
     }
   }
 }

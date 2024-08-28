@@ -1,7 +1,7 @@
 <template>
   <div class="playground">
     <lc-input v-model="searchvalue">
-      <template #append>
+      <template #repend>
         <lc-button :icon="SearchIcon" />
         <!-- http:// -->
       </template>
