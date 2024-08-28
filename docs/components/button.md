@@ -26,15 +26,15 @@
         <lc-button type="warning" round>warning</lc-button>
     </div>
     <div class="show-box">
-        <lc-button circle loading></lc-button>
-        <lc-button type="primary" circle loading></lc-button>
-        <lc-button type="error" circle loading></lc-button>
-        <lc-button type="warning" circle loading></lc-button>
+        <lc-button circle :icon="SearchIcon"></lc-button>
+        <lc-button type="primary" circle :icon="SearchIcon"></lc-button>
+        <lc-button type="error" circle :icon="SearchIcon"></lc-button>
+        <lc-button type="warning" circle :icon="SearchIcon"></lc-button>
     </div>
 </lc-card>
 
 <script setup lang="ts">
-    import {LcButton,LcCard} from '@lichang666/design-vue'
+    import {LcButton,LcCard,SearchIcon} from '@lichang666/design-vue'
 </script>
 
 ```vue
@@ -58,14 +58,14 @@
     <lc-button type="warning" round>warning</lc-button>
   </div>
   <div class="show-box">
-    <lc-button circle loading></lc-button>
-    <lc-button type="primary" circle loading></lc-button>
-    <lc-button type="error" circle loading></lc-button>
-    <lc-button type="warning" circle loading></lc-button>
+    <lc-button circle :icon="SearchIcon"></lc-button>
+    <lc-button type="primary" circle :icon="SearchIcon"></lc-button>
+    <lc-button type="error" circle :icon="SearchIcon"></lc-button>
+    <lc-button type="warning" circle :icon="SearchIcon"></lc-button>
   </div>
 </template>
 <script setup lang="ts">
-  import { LcButton } from '@lichang666/design-vue'
+  import { LcButton, SearchIcon } from '@lichang666/design-vue'
 </script>
 ```
 
