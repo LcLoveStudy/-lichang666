@@ -135,13 +135,7 @@
 
   /** computed show of clearIcon */
   const clearIconShow = computed(() => {
-    return (
-      props.clearable &&
-      inputValue.value &&
-      !props.disabled &&
-      !props.readonly &&
-      props.type === 'text'
-    )
+    return props.clearable && !props.disabled && !props.readonly && props.type === 'text'
   })
 
   /** computed count show */

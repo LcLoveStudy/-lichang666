@@ -1,8 +1,12 @@
 <template>
   <div class="playground">
-    <lc-input v-model="searchvalue">
+    <lc-input v-model="searchvalue" clearable>
       <template #repend>
-        <lc-button :icon="SearchIcon" />
+        <!-- <lc-button :icon="SearchIcon" /> -->
+        http://
+      </template>
+      <template #append>
+        <lc-button>搜索</lc-button>
         <!-- http:// -->
       </template>
     </lc-input>

@@ -132,6 +132,9 @@
       border: none;
       border-radius: 0;
       background-color: none;
+      &:hover {
+        z-index: 3;
+      }
     }
   }
   &__append {
@@ -142,11 +145,6 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    &:has(.lc-button) {
-      &:hover {
-        z-index: 3;
-      }
-    }
   }
   &__repend {
     margin-right: -1px;
@@ -155,11 +153,6 @@
     .lc-button {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-    }
-    &:has(.lc-button) {
-      &:hover {
-        z-index: 3;
-      }
     }
   }
   &:has(.lc-input__append) {
