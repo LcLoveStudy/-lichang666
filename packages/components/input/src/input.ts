@@ -17,6 +17,9 @@ export const inputProps = {
   suffixIcon: {
     type: Object as PropType<LcIconInstance>
   },
+  prefixIcon: {
+    type: Object as PropType<LcIconInstance>
+  },
   loading: {
     type: Boolean,
     default: false

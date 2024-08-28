@@ -1,6 +1,10 @@
 <template>
   <div class="lc-input" @click="inputFocus">
     <div class="lc-input__wrapper">
+      <div class="lc-input__prefix" v-if="prefixBoxComputed">
+        <component v-if="prefixIcon" :is="prefixIcon" />
+        <slot v-else-if="slots.prefixIcon" name="prefixIcon"></slot>
+      </div>
       <component
         :is="compIs"
         ref="inputRef"
@@ -104,6 +108,9 @@
       props.suffixIcon ||
       slots.suffixIcon
     )
+  })
+  const prefixBoxComputed = computed(() => {
+    return props.prefixIcon || slots.prefixIcon
   })
   /** search icon show */
   const searchIconComputed = computed(() => {
