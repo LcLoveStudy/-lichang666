@@ -1,4 +1,5 @@
 import { PropType } from 'vue'
+import { LcIconInstance } from '../../icons'
 
 export const inputProps = {
   placeholder: {
@@ -12,6 +13,9 @@ export const inputProps = {
   search: {
     type: Boolean,
     default: false
+  },
+  suffixIcon: {
+    type: Object as PropType<LcIconInstance>
   },
   loading: {
     type: Boolean,

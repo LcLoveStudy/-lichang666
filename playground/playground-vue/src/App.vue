@@ -1,12 +1,16 @@
 <template>
   <div class="playground">
-    <lc-input v-model="searchvalue" />
+    <lc-input v-model="searchvalue">
+      <template #suffixIcon>
+        <SearchIcon />
+      </template>
+    </lc-input>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LcButton, SearchIcon, LcInput } from '@lichang666/design-vue'
+import { SearchIcon, LcInput } from '@lichang666/design-vue'
 const searchvalue = ref('')
 </script>
 

@@ -23,20 +23,34 @@
         @focus="focusEventHandler"
       />
       <div class="lc-input__suffix" v-if="suffixBoxComputed">
-        <!-- count length -->
-        <div class="lc-input__count" v-if="showCountComputed">
-          {{ countStringComputed }}
-        </div>
-        <!-- clear value  -->
-        <CloseFullIcon
-          class="lc-input__clear"
-          :color="iconColorComputed"
-          @click="clearInputValue"
-          v-if="clearIconShow"
-        />
-        <!-- password view and hide -->
-        <ViewIcon @click="viewClickHandler" :color="iconColorComputed" v-show="viewIconComputed" />
-        <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
+        <component v-if="suffixIcon" :is="suffixIcon" />
+        <slot v-else-if="slots.suffixIcon" name="suffixIcon"></slot>
+        <template v-else>
+          <!-- count length -->
+          <div class="lc-input__count" v-if="showCountComputed">
+            {{ countStringComputed }}
+          </div>
+          <!-- clear value  -->
+          <CloseFullIcon
+            class="lc-input__clear"
+            :color="iconColorComputed"
+            @click="clearInputValue"
+            v-if="clearIconShow"
+          />
+          <!-- password view and hide -->
+          <ViewIcon
+            class="lc-input__pass"
+            @click="viewClickHandler"
+            :color="iconColorComputed"
+            v-show="viewIconComputed"
+          />
+          <HideIcon
+            class="lc-input__pass"
+            @click="viewClickHandler"
+            :color="iconColorComputed"
+            v-show="hideIconComputed"
+          />
+        </template>
       </div>
     </div>
     <div class="lc-input__append" v-if="suffixSlotComputed">
@@ -86,7 +100,9 @@
       showCountComputed.value ||
       clearIconShow.value ||
       viewIconComputed.value ||
-      hideIconComputed.value
+      hideIconComputed.value ||
+      props.suffixIcon ||
+      slots.suffixIcon
     )
   })
   /** search icon show */
