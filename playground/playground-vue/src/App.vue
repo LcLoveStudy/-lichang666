@@ -1,11 +1,17 @@
 <template>
   <div class="playground">
-    <lc-button :icon="SearchIcon" color="#9333ea" circle>你好</lc-button>
+    <lc-input v-model="searchvalue" search>
+      <template #suffix>
+        <lc-button type="warning" :icon="SearchIcon" />
+      </template>
+    </lc-input>
   </div>
 </template>
 
 <script setup lang="ts">
-import { LcButton, SearchIcon } from '@lichang666/design-vue'
+import { ref } from 'vue'
+import { LcButton, SearchIcon, LcInput } from '@lichang666/design-vue'
+const searchvalue = ref('')
 </script>
 
 <style scoped>

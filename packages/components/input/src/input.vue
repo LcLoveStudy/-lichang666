@@ -48,17 +48,19 @@
         @click="searchClickHandler"
         :icon="SearchIcon"
       />
+      <slot name="suffix"></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon, LcButton } from '@lichang666/design-vue'
-  import { computed, ref } from 'vue'
+  import { computed, ref, useSlots } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
   const emits = defineEmits(['input', 'blur', 'focus', 'clear', 'search'])
+  const slots = useSlots()
   const inputValue = defineModel({
     type: String,
     required: true
@@ -89,7 +91,7 @@
   })
   /** search icon show */
   const searchIconComputed = computed(() => {
-    return props.type === 'text' && props.search
+    return props.type === 'text' && props.search && !slots.suffix
   })
 
   /** icon disabeld color computed */
