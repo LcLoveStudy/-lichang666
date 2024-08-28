@@ -1,10 +1,6 @@
 <template>
   <div class="playground">
-    <lc-input v-model="searchvalue" search>
-      <template #suffix>
-        <lc-button type="warning" :icon="SearchIcon"> 你好 </lc-button>
-      </template>
-    </lc-input>
+    <lc-input v-model="searchvalue" />
   </div>
 </template>
 

@@ -39,7 +39,7 @@
         <HideIcon @click="viewClickHandler" :color="iconColorComputed" v-show="hideIconComputed" />
       </div>
     </div>
-    <div class="lc-input__append">
+    <div class="lc-input__append" v-if="suffixSlotComputed">
       <!-- search -->
       <lc-button
         v-if="searchIconComputed"
@@ -92,6 +92,10 @@
   /** search icon show */
   const searchIconComputed = computed(() => {
     return props.type === 'text' && props.search && !slots.suffix
+  })
+  /** suffix slot show */
+  const suffixSlotComputed = computed(() => {
+    return searchIconComputed.value || slots.suffix
   })
 
   /** icon disabeld color computed */
