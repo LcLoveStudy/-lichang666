@@ -24,8 +24,7 @@
       default: 16
     },
     color: {
-      type: String,
-      default: '#ccc'
+      type: String
     }
   })
 </script>
