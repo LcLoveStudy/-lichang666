@@ -1,5 +1,5 @@
 import { PropType } from 'vue'
-import { LcIconInstance } from '../../icons'
+import { LcIconInstance } from '@lichang666/design-vue'
 
 export const buttonProps = {
   type: {

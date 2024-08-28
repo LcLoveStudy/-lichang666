@@ -15,13 +15,6 @@
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    size: {
-      type: [Number, String],
-      default: 16
-    },
-    color: {
-      type: String
-    }
-  })
+  import { iconProps } from '@lichang666/design-vue'
+  defineProps(iconProps)
 </script>
