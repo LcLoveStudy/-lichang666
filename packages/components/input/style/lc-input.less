@@ -16,6 +16,8 @@
   display: inline-flex;
   align-items: center;
   font-weight: normal;
+  font-size: @--lc-input-font-size;
+  color: @--lc-input-color-font;
   &__wrapper {
     flex: 1;
     width: 100%;
@@ -116,11 +118,22 @@
   }
   &__append {
     height: calc(@--lc-input-height + 2px);
+    padding: @--lc-input-padding;
+    border: 1px solid @--lc-input-color-border-default;
+    border-top-right-radius: @--lc-input-rounded;
+    border-bottom-right-radius: @--lc-input-rounded;
+    background-color: lighten(@--lc-input-color-border-default, 10%);
     .lc-button {
       height: 100%;
       border-radius: 0;
       border-top-right-radius: @--lc-input-rounded;
       border-bottom-right-radius: @--lc-input-rounded;
+    }
+    &:has(.lc-button) {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background-color: none;
     }
   }
   &:has(.lc-input__append) {
@@ -132,11 +145,22 @@
   }
   &__repend {
     height: calc(@--lc-input-height + 2px);
+    padding: @--lc-input-padding;
+    border: 1px solid @--lc-input-color-border-default;
+    border-top-left-radius: @--lc-input-rounded;
+    border-bottom-left-radius: @--lc-input-rounded;
+    background-color: lighten(@--lc-input-color-border-default, 10%);
     .lc-button {
       height: 100%;
       border-radius: 0;
       border-top-left-radius: @--lc-input-rounded;
       border-bottom-left-radius: @--lc-input-rounded;
+    }
+    &:has(.lc-button) {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background-color: none;
     }
   }
   &:has(.lc-input__repend) {
