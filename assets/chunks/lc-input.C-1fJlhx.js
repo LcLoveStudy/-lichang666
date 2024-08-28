@@ -1,0 +1,1 @@
+import{d as o,o as s,c as t,r as c,n as d}from"./framework.j5SZ8Edx.js";const n=o({__name:"card",props:{shadow:{type:String,default:"always"},border:{type:Boolean,default:!0}},setup(e){const a=e;return(r,l)=>(s(),t("div",{class:d(["lc-card",[`lc-card-shadow-${a.shadow}`,a.border?"lc-card-border":""]])},[c(r.$slots,"default")],2))}}),m=n;export{m as L};
