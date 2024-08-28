@@ -22,18 +22,18 @@
     height: 100%;
     display: inline-flex;
     background: @--lc-color-white;
-    border: 1px solid @--lc-input-color-border-default;
+    box-shadow: 0 0 0 1px @--lc-input-color-border-default;
     border-radius: @--lc-input-rounded;
     transition: all 0.2s;
     padding: @--lc-input-padding;
     &:hover {
-      border: 1px solid darken(@--lc-input-color-border-default, 10%);
+      box-shadow: 0 0 0 1px darken(@--lc-input-color-border-default, 10%);
       .lc-input__suffix .lc-input__clear {
         opacity: 1;
       }
     }
     &:has(.lc-input__inner:focus) {
-      border: 1px solid @--lc-color-primary;
+      box-shadow: 0 0 3px 1px @--lc-color-primary;
       .lc-input__suffix .lc-input__clear {
         opacity: 1;
       }
@@ -42,7 +42,7 @@
     &:has(.lc-input__inner:read-only) {
       cursor: not-allowed;
       background: @--lc-border-color-gay;
-      border: 1px solid @--lc-input-color-border-default;
+      box-shadow: 0 0 0 1px @--lc-input-color-border-default;
       .lc-input__inner {
         cursor: not-allowed;
         color: @--lc-input-color-placeholder;
