@@ -11,11 +11,9 @@
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
-    <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-if="loading" />
-      <component v-else-if="icon" :is="icon" />
-      <slot v-else></slot>
-    </div>
+    <loading-icon class="lc-button-loading" v-if="loading" />
+    <component v-else-if="icon" :is="icon" />
+    <slot v-if="!circle"></slot>
   </button>
 </template>
 
@@ -42,7 +40,7 @@
       background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out,
       color 0.15s ease-in-out;
-    .lc-button-loading {
+    .lc-icon {
       fill: #fff;
     }
     &:hover {
@@ -63,12 +61,15 @@
     &.lc-button-plain {
       background-color: v-bind(plainBgColor);
       color: v-bind(color);
-      .lc-button-loading {
+      .lc-icon {
         fill: v-bind(color);
       }
       &:hover {
         background-color: v-bind(color);
         color: #fff;
+        .lc-icon {
+          fill: #fff;
+        }
       }
       &:disabled {
         border-color: v-bind(disabledBgColor);

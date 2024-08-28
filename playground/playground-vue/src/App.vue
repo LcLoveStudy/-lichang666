@@ -1,13 +1,11 @@
 <template>
   <div class="playground">
-    <lc-input v-model="inputValue" placeholder="请输入名称" />
+    <lc-button :icon="SearchIcon" color="#9333ea" circle>你好</lc-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { LcInput } from '@lichang666/design-vue'
-const inputValue = ref('33333')
+import { LcButton, SearchIcon } from '@lichang666/design-vue'
 </script>
 
 <style scoped>

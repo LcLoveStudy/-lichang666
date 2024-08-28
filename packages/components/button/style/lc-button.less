@@ -15,7 +15,9 @@
   border: none;
   font-size: 1rem;
   color: @--lc-button-text-color-white;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: @--lc-button-padding;
   border-radius: @--lc-button-radius;
   border: 1px solid;
@@ -30,9 +32,8 @@
     opacity: 0;
     transition: @--lc-button-shadow-transition;
   }
-  &-content {
-    display: flex;
-    align-items: center;
+  .lc-icon {
+    margin-right: 5px;
   }
   &:active::after {
     opacity: 1;
@@ -59,14 +60,9 @@
   &-circle {
     border-radius: 50%;
     padding: 0;
-    padding: 0 1rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     width: 2rem;
     height: 2rem;
-    overflow: hidden;
-    .lc-button-loading {
+    .lc-icon {
       margin-right: 0;
     }
   }
@@ -78,12 +74,15 @@
   color: lighten(@--lc-button-text-color-dark, 35%);
   border-color: darken(@--lc-button-bg-color-default, 15%);
   transition: @--lc-button-background-transition;
-  .lc-button-loading {
+  .lc-icon {
     fill: lighten(@--lc-button-text-color-dark, 15%);
   }
   &:hover {
     color: @--lc-color-primary;
     border-color: @--lc-color-primary;
+    .lc-icon {
+      fill: @--lc-color-primary;
+    }
   }
   &::after {
     box-shadow: 0 0 10px lighten(@--lc-color-primary, 15%);
@@ -104,13 +103,13 @@
     &::after {
       box-shadow: none;
     }
-    .lc-button-loading {
+    .lc-icon {
       fill: darken(@--lc-button-text-color-dark, 10%);
     }
     &:disabled {
       color: lighten(@--lc-button-text-color-dark, 60%);
     }
-    &:has(.lc-button-loading) {
+    &:has(.lc-icon) {
       color: lighten(@--lc-button-text-color-dark, 60%);
     }
   }
@@ -123,10 +122,10 @@
     }
     &.lc-button-text {
       color: lighten(@--lc-button-text-color-dark, 60%);
-      .lc-button-loading {
+      .lc-icon {
         fill: lighten(@--lc-button-text-color-dark, 60%);
       }
-      &:has(.lc-button-loading) {
+      &:has(.lc-icon) {
         color: lighten(@--lc-button-text-color-dark, 35%);
       }
     }
@@ -141,7 +140,7 @@
     background-color: @color;
     border-color: @color;
     transition: @--lc-button-background-transition;
-    .lc-button-loading {
+    .lc-icon {
       fill: @--lc-button-text-color-white;
     }
     &:hover {
@@ -161,12 +160,15 @@
     &.lc-button-plain {
       background-color: rgba(@color, 10%);
       color: darken(@color, 10%);
-      .lc-button-loading {
+      .lc-icon {
         fill: darken(@color, 10%);
       }
       &:hover {
         background-color: @color;
         color: @--lc-button-text-color-white;
+        .lc-icon {
+          fill: @--lc-button-text-color-white;
+        }
       }
       &:disabled {
         border-color: rgba(@color, 0.6);
@@ -183,14 +185,14 @@
       &::after {
         box-shadow: none;
       }
-      .lc-button-loading {
+      .lc-icon {
         fill: darken(@color, 10%);
       }
       &:disabled {
         color: rgba(@color, 0.6);
       }
     }
-    &.lc-button-text:has(.lc-button-loading) {
+    &.lc-button-text:has(.lc-icon) {
       color: rgba(@color, 0.6);
     }
     .lc-icon {
