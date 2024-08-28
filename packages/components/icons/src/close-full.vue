@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-  import { iconProps } from '@lichang666/design-vue'
+  import { iconProps } from './icon'
   defineProps(iconProps)
 </script>
