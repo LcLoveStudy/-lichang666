@@ -13,7 +13,8 @@
   >
     <div class="lc-button-content">
       <loading-icon class="lc-button-loading" v-if="loading" />
-      <slot></slot>
+      <component v-else-if="icon" :is="icon" />
+      <slot v-else></slot>
     </div>
   </button>
 </template>

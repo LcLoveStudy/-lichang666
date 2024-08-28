@@ -11,7 +11,7 @@
         :value="inputValue"
         :placeholder
         :type
-        :disabled
+        :disabled="disabled || loading"
         :readonly
         :autofocus
         :autocomplete
@@ -40,9 +40,14 @@
       </div>
     </div>
     <!-- search -->
-    <lc-button class="lc-input__search" v-if="searchIconComputed" type="primary">
-      <SearchIcon />
-    </lc-button>
+    <lc-button
+      class="lc-input__search"
+      v-if="searchIconComputed"
+      :disabled
+      :loading
+      @click="searchClickHandler"
+      :icon="SearchIcon"
+    />
   </div>
 </template>
 
@@ -52,7 +57,7 @@
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'
   const props = defineProps(inputProps)
-  const emits = defineEmits(['input', 'blur', 'focus', 'clear'])
+  const emits = defineEmits(['input', 'blur', 'focus', 'clear', 'search'])
   const inputValue = defineModel({
     type: String,
     required: true
@@ -148,6 +153,9 @@
 
   /** focus event */
   const focusEventHandler = (e: FocusEvent) => emits('focus', e)
+
+  /** click search button */
+  const searchClickHandler = () => emits('search')
 
   defineExpose({
     blur: inputBlur,

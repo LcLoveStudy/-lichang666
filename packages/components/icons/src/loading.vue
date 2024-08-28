@@ -56,7 +56,7 @@
 <script setup lang="ts">
   defineProps({
     size: {
-      type: Number,
+      type: [Number, String],
       default: 16
     },
     color: {

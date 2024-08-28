@@ -1,4 +1,5 @@
 import { PropType } from 'vue'
+import { LcIconInstance } from '../../icons'
 
 export const buttonProps = {
   type: {
@@ -35,6 +36,9 @@ export const buttonProps = {
   textSpace: {
     type: Number,
     default: 0
+  },
+  icon: {
+    type: Object as PropType<LcIconInstance>
   }
 }
 export type LcButtonProps = Readonly<typeof buttonProps>

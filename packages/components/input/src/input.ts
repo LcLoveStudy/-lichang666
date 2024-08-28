@@ -13,6 +13,10 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
+  loading: {
+    type: Boolean,
+    default: false
+  },
   clearable: {
     type: Boolean,
     default: false
