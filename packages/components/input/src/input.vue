@@ -1,9 +1,12 @@
 <template>
   <div class="lc-input" @click="inputFocus">
+    <div class="lc-input__repend" v-if="rependSlotComputed">
+      <slot name="repend"></slot>
+    </div>
     <div class="lc-input__wrapper">
       <div class="lc-input__prefix" v-if="prefixBoxComputed">
         <component v-if="prefixIcon" :is="prefixIcon" />
-        <slot v-else-if="slots.prefixIcon" name="prefixIcon"></slot>
+        <slot v-else-if="slots.prefix" name="prefix"></slot>
       </div>
       <component
         :is="compIs"
@@ -28,7 +31,7 @@
       />
       <div class="lc-input__suffix" v-if="suffixBoxComputed">
         <component v-if="suffixIcon" :is="suffixIcon" />
-        <slot v-else-if="slots.suffixIcon" name="suffixIcon"></slot>
+        <slot v-else-if="slots.suffix" name="suffix"></slot>
         <template v-else>
           <!-- count length -->
           <div class="lc-input__count" v-if="showCountComputed">
@@ -57,7 +60,7 @@
         </template>
       </div>
     </div>
-    <div class="lc-input__append" v-if="suffixSlotComputed">
+    <div class="lc-input__append" v-if="appendSlotComputed">
       <!-- search -->
       <lc-button
         v-if="searchIconComputed"
@@ -66,7 +69,7 @@
         @click="searchClickHandler"
         :icon="SearchIcon"
       />
-      <slot name="suffix"></slot>
+      <slot name="append"></slot>
     </div>
   </div>
 </template>
@@ -106,19 +109,23 @@
       viewIconComputed.value ||
       hideIconComputed.value ||
       props.suffixIcon ||
-      slots.suffixIcon
+      slots.suffix
     )
   })
   const prefixBoxComputed = computed(() => {
-    return props.prefixIcon || slots.prefixIcon
+    return props.prefixIcon || slots.prefix
   })
   /** search icon show */
   const searchIconComputed = computed(() => {
-    return props.type === 'text' && props.search && !slots.suffix
+    return props.type === 'text' && props.search && !slots.append
   })
   /** suffix slot show */
-  const suffixSlotComputed = computed(() => {
-    return searchIconComputed.value || slots.suffix
+  const appendSlotComputed = computed(() => {
+    return searchIconComputed.value || slots.append
+  })
+
+  const rependSlotComputed = computed(() => {
+    return slots.repend
   })
 
   /** icon disabeld color computed */

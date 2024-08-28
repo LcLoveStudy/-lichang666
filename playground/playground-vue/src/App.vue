@@ -1,7 +1,7 @@
 <template>
   <div class="playground">
     <lc-input v-model="searchvalue">
-      <template #prefixIcon>
+      <template #suffix>
         <search-icon />
       </template>
     </lc-input>
