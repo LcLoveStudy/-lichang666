@@ -13,17 +13,19 @@
   >
     <loading-icon class="lc-button-loading" v-if="loading" />
     <component v-else-if="icon" :is="icon" />
-    <span v-if="!circle" class="lc-button-content">
+    <span v-if="!circle && slots.default" class="lc-button-content">
       <slot></slot>
     </span>
   </button>
 </template>
 
 <script setup lang="ts">
+  import { useSlots } from 'vue'
   import { LoadingIcon } from '@lichang666/design-vue'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)
+  const slots = useSlots()
   const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = props.color
     ? customColorComputed(props.color as string)
     : {

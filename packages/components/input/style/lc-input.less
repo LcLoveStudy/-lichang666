@@ -19,6 +19,7 @@
   &__wrapper {
     flex: 1;
     width: 100%;
+    position: relative;
     height: 100%;
     display: inline-flex;
     background: @--lc-color-white;
@@ -33,7 +34,7 @@
       }
     }
     &:has(.lc-input__inner:focus) {
-      box-shadow: 0 0 3px 1px @--lc-color-primary;
+      box-shadow: 0 0 2px 1px @--lc-color-primary;
       .lc-input__suffix .lc-input__clear {
         opacity: 1;
       }
@@ -114,9 +115,9 @@
     }
   }
   &__append {
-    height: @--lc-input-height;
+    height: calc(@--lc-input-height + 2px);
     .lc-button {
-      height: @--lc-input-height;
+      height: 100%;
       border-radius: 0;
       border-top-right-radius: @--lc-input-rounded;
       border-bottom-right-radius: @--lc-input-rounded;
@@ -127,6 +128,22 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-right: none;
+    }
+  }
+  &__repend {
+    height: calc(@--lc-input-height + 2px);
+    .lc-button {
+      height: 100%;
+      border-radius: 0;
+      border-top-left-radius: @--lc-input-rounded;
+      border-bottom-left-radius: @--lc-input-rounded;
+    }
+  }
+  &:has(.lc-input__repend) {
+    .lc-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
     }
   }
 }
