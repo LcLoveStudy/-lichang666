@@ -4,11 +4,15 @@ export default [
     link: '/components/getting-started'
   },
   {
-    text: 'Card 卡片',
-    link: '/components/card'
-  },
-  {
     text: 'Button 按钮',
     link: '/components/button'
+  },
+  {
+    text: 'Input 输入框',
+    link: '/components/input'
+  },
+  {
+    text: 'Card 卡片',
+    link: '/components/card'
   }
 ]

@@ -249,16 +249,17 @@
 
 ## 属性
 
-| 属性名    | 类型      | 默认值    | 说明                                           |
-| --------- | --------- | --------- | ---------------------------------------------- |
-| type      | `string`  | `default` | 按钮类型 `primary` `warning` `error` `default` |
-| plain     | `boolean` | `false`   | 是否是朴素按钮                                 |
-| disabled  | `boolean` | `false`   | 是否是禁用                                     |
-| loading   | `boolean` | `false`   | 是否是`loading`状态                            |
-| color     | `string`  | 无        | 自定义颜色,仅支持`16进制`                      |
-| round     | `boolean` | `false`   | 是否圆角按钮                                   |
-| circle    | `boolean` | `false`   | 是否圆按钮                                     |
-| textSpace | `number`  | `0`       | 按钮文字间距                                   |
+| 属性名    | 类型             | 默认值    | 说明                                           |
+| --------- | ---------------- | --------- | ---------------------------------------------- |
+| type      | `string`         | `default` | 按钮类型 `primary` `warning` `error` `default` |
+| plain     | `boolean`        | `false`   | 是否是朴素按钮                                 |
+| icon      | `LcIconInstance` | 无        | 图标                                           |
+| disabled  | `boolean`        | `false`   | 是否是禁用                                     |
+| loading   | `boolean`        | `false`   | 是否是`loading`状态                            |
+| color     | `string`         | 无        | 自定义颜色,仅支持`16进制`                      |
+| round     | `boolean`        | `false`   | 是否圆角按钮                                   |
+| circle    | `boolean`        | `false`   | 是否圆按钮                                     |
+| textSpace | `number`         | `0`       | 按钮文字间距                                   |
 
 <style>
 .show-box{
