@@ -57,5 +57,9 @@ export default [
       { text: 'isDateLike', link: '/funcs/date/isDateLike' },
       { text: 'dayOfYear', link: '/funcs/date/dayOfYear' }
     ]
+  },
+  {
+    text: 'File',
+    items: [{ text: 'fileDownload', link: '/funcs/file/fileDownload' }]
   }
 ]
