@@ -1,3 +1,9 @@
+# 0.0.12
+
+### Feature
+
+- **fileDownload:** add type export `FileDownloadOptions` ([<u>e6d2dba</u>](https://github.com/LcLoveStudy/-lichang666/commit/e6d2dbaefd6f4b9f02a5a5a113eeb15e149a7105))
+
 # 0.0.11
 
 ### Feature
