@@ -5,9 +5,3 @@
 - out of frame
 - write by `TypeScript`
 - some common function
-
-## 2. @lichang666/hooks-vue(3.x)
-
-- use `vue3.x`
-- write by `TypeScript`
-- some common hooks(like useLocalStorage...)
