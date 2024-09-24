@@ -4,10 +4,6 @@ export default [
     link: '/funcs/getting-started'
   },
   {
-    text: '基础',
-    items: [{ text: '快速开始', link: '/getting-started' }]
-  },
-  {
     text: 'Base',
     items: [
       { text: 'copyTxt', link: '/funcs/base/copyTxt' },
