@@ -1,16 +1,22 @@
 <template>
   <div class="playground">
-    <lc-card class="my-card">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quos qui sunt exercitationem
-      dolorum possimus iusto labore, consectetur ipsum accusantium quaerat minima repellat
-      reprehenderit aut at totam consequuntur autem delectus.
-    </lc-card>
-    <lc-button color="primary">hello world</lc-button>
+    <lc-input v-model="searchvalue" clearable>
+      <template #repend>
+        <!-- <lc-button :icon="SearchIcon" /> -->
+        http://
+      </template>
+      <template #append>
+        <lc-button>搜索</lc-button>
+        <!-- http:// -->
+      </template>
+    </lc-input>
   </div>
 </template>
 
 <script setup lang="ts">
-import { LcCard, LcButton } from '@lichang666/lc-design-vue'
+import { ref } from 'vue'
+import { LcInput, SearchIcon, LcButton } from '@lichang666/design-vue'
+const searchvalue = ref('')
 </script>
 
 <style scoped>
@@ -22,9 +28,5 @@ import { LcCard, LcButton } from '@lichang666/lc-design-vue'
   width: 100%;
   height: 100%;
   background-color: #eee;
-}
-.my-card {
-  width: 20rem;
-  margin-bottom: 1rem;
 }
 </style>

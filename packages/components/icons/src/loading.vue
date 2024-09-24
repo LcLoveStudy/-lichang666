@@ -6,6 +6,7 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     p-id="6092"
+    :fill="color"
     :width="size"
     :height="size"
   >
@@ -53,20 +54,6 @@
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    size: {
-      type: Number,
-      default: 16
-    },
-    color: {
-      type: String,
-      default: 'inhert'
-    }
-  })
+  import { iconProps } from './icon'
+  defineProps(iconProps)
 </script>
-
-<style lang="less" scoped>
-  .lc-icon {
-    fill: v-bind(color);
-  }
-</style>

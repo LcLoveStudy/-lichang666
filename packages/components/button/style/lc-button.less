@@ -1,3 +1,4 @@
+@import '../../design/var.less';
 @--lc-button-padding:0.3rem 1.2rem;
 @--lc-button-radius: 0.3rem;
 @--lc-button-text-color-white: #fff;
@@ -5,11 +6,8 @@
 @--lc-button-background-transition:background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,color 0.15s ease-in-out;
 @--lc-button-shadow-transition: 0.5s;
 /** 颜色列表 */
-@--lc-button-bg-color-primary: #3b82f6;
-@--lc-button-bg-color-warning: #f59e0b;
-@--lc-button-bg-color-error: #ef4444;
 @--lc-button-bg-color-default: #fff;
-@colors: @--lc-button-bg-color-primary, @--lc-button-bg-color-warning, @--lc-button-bg-color-error;
+@colors: @--lc-color-primary, @--lc-color-warning, @--lc-color-error;
 @types: primary, warning, error;
 
 /** 基础类 */
@@ -17,13 +15,16 @@
   border: none;
   font-size: 1rem;
   color: @--lc-button-text-color-white;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: @--lc-button-padding;
   border-radius: @--lc-button-radius;
   border: 1px solid;
   cursor: pointer;
   outline: none;
   position: relative;
+  white-space: nowrap;
   &::after {
     content: '';
     position: absolute;
@@ -32,17 +33,22 @@
     opacity: 0;
     transition: @--lc-button-shadow-transition;
   }
+  &-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:has(.lc-button-content) {
+    .lc-icon {
+      margin-right: 5px;
+    }
+  }
   &:active::after {
     opacity: 1;
     transition: 0s;
   }
   &:disabled::after {
     opacity: 0;
-  }
-  &-content {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
   &-loading {
     margin-right: 10px;
@@ -62,16 +68,8 @@
   &-circle {
     border-radius: 50%;
     padding: 0;
-    padding: 0 1rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     width: 2rem;
     height: 2rem;
-    overflow: hidden;
-    & .lc-button-loading {
-      margin-right: 0;
-    }
   }
 }
 
@@ -81,18 +79,21 @@
   color: lighten(@--lc-button-text-color-dark, 35%);
   border-color: darken(@--lc-button-bg-color-default, 15%);
   transition: @--lc-button-background-transition;
-  .lc-button-loading {
+  .lc-icon {
     fill: lighten(@--lc-button-text-color-dark, 15%);
   }
   &:hover {
-    color: @--lc-button-bg-color-primary;
-    border-color: @--lc-button-bg-color-primary;
+    color: @--lc-color-primary;
+    border-color: @--lc-color-primary;
+    .lc-icon {
+      fill: @--lc-color-primary;
+    }
   }
   &::after {
-    box-shadow: 0 0 10px lighten(@--lc-button-bg-color-primary, 15%);
+    box-shadow: 0 0 10px lighten(@--lc-color-primary, 15%);
   }
   &:active {
-    color: darken(@--lc-button-bg-color-primary, 15%);
+    color: darken(@--lc-color-primary, 15%);
   }
   &:disabled {
     color: lighten(@--lc-button-text-color-dark, 55%);
@@ -100,12 +101,38 @@
     background-color: rgba(@--lc-button-bg-color-default, 0.6);
     cursor: not-allowed;
   }
+  // 文字按钮
+  &.lc-button-text {
+    background-color: transparent;
+    border-color: transparent;
+    &::after {
+      box-shadow: none;
+    }
+    .lc-icon {
+      fill: darken(@--lc-button-text-color-dark, 10%);
+    }
+    &:disabled {
+      color: lighten(@--lc-button-text-color-dark, 60%);
+    }
+    &:has(.lc-icon) {
+      color: lighten(@--lc-button-text-color-dark, 60%);
+    }
+  }
 }
 
 .dark {
   .lc-button-default {
     &:disabled {
       color: lighten(@--lc-button-text-color-dark, 100%);
+    }
+    &.lc-button-text {
+      color: lighten(@--lc-button-text-color-dark, 60%);
+      .lc-icon {
+        fill: lighten(@--lc-button-text-color-dark, 60%);
+      }
+      &:has(.lc-icon) {
+        color: lighten(@--lc-button-text-color-dark, 35%);
+      }
     }
   }
 }
@@ -118,7 +145,7 @@
     background-color: @color;
     border-color: @color;
     transition: @--lc-button-background-transition;
-    .lc-button-loading {
+    .lc-icon {
       fill: @--lc-button-text-color-white;
     }
     &:hover {
@@ -138,12 +165,15 @@
     &.lc-button-plain {
       background-color: rgba(@color, 10%);
       color: darken(@color, 10%);
-      .lc-button-loading {
+      .lc-icon {
         fill: darken(@color, 10%);
       }
       &:hover {
         background-color: @color;
         color: @--lc-button-text-color-white;
+        .lc-icon {
+          fill: @--lc-button-text-color-white;
+        }
       }
       &:disabled {
         border-color: rgba(@color, 0.6);
@@ -151,6 +181,27 @@
         color: rgba(@color, 0.6);
         cursor: not-allowed;
       }
+    }
+    // 文字按钮
+    &.lc-button-text {
+      color: @color;
+      background-color: transparent;
+      border-color: transparent;
+      &::after {
+        box-shadow: none;
+      }
+      .lc-icon {
+        fill: darken(@color, 10%);
+      }
+      &:disabled {
+        color: rgba(@color, 0.6);
+      }
+    }
+    &.lc-button-text:has(.lc-icon) {
+      color: rgba(@color, 0.6);
+    }
+    .lc-icon {
+      fill: @--lc-button-text-color-white;
     }
   }
   .generate-class(@i - 1);

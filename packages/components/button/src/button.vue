@@ -3,35 +3,48 @@
     class="lc-button"
     :class="[
       color ? 'lc-button-custom' : type ? `lc-button-${type}` : 'lc-button-default',
-      { 'lc-button-plain': plain },
-      { 'lc-button-round': round },
-      { 'lc-button-circle': circle }
+      { 'lc-button-plain': plain && !text },
+      { 'lc-button-round': round && !text },
+      { 'lc-button-circle': circle && !text },
+      { 'lc-button-text': text }
     ]"
     :style="[{ letterSpacing: `${textSpace}px` }]"
     :disabled="disabled || loading"
   >
-    <div class="lc-button-content">
-      <loading-icon class="lc-button-loading" v-show="loading" />
+    <loading-icon class="lc-button-loading" v-if="loading" />
+    <component v-else-if="icon" :is="icon" />
+    <span v-if="!circle && slots.default" class="lc-button-content">
       <slot></slot>
-    </div>
+    </span>
   </button>
 </template>
 
 <script setup lang="ts">
-  import { LoadingIcon } from '../../icons'
+  import { useSlots } from 'vue'
+  import { LoadingIcon } from '@lichang666/design-vue'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)
-  const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = customColorComputed(
-    props.color as string
-  )
+  const slots = useSlots()
+  const { hoverBgColor, activeBgColor, disabledBgColor, plainBgColor } = props.color
+    ? customColorComputed(props.color as string)
+    : {
+        hoverBgColor: '',
+        activeBgColor: '',
+        disabledBgColor: '',
+        plainBgColor: ''
+      }
 </script>
 
 <style lang="less" scoped>
   .lc-button-custom {
     background: v-bind(color);
     border-color: v-bind(color);
-    .lc-button-loading {
+    transition:
+      background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out,
+      color 0.15s ease-in-out;
+    .lc-icon {
       fill: #fff;
     }
     &:hover {
@@ -52,12 +65,15 @@
     &.lc-button-plain {
       background-color: v-bind(plainBgColor);
       color: v-bind(color);
-      .lc-button-loading {
+      .lc-icon {
         fill: v-bind(color);
       }
       &:hover {
         background-color: v-bind(color);
         color: #fff;
+        .lc-icon {
+          fill: #fff;
+        }
       }
       &:disabled {
         border-color: v-bind(disabledBgColor);
@@ -65,6 +81,24 @@
         color: v-bind(disabledBgColor);
         cursor: not-allowed;
       }
+    }
+    // 文字按钮
+    &.lc-button-text {
+      color: v-bind(color);
+      background-color: transparent;
+      border-color: transparent;
+      &::after {
+        box-shadow: none;
+      }
+      .lc-button-loading {
+        fill: v-bind(color);
+      }
+      &:disabled {
+        color: v-bind(disabledBgColor);
+      }
+    }
+    &.lc-button-text:has(.lc-button-loading) {
+      color: v-bind(disabledBgColor);
     }
   }
 </style>

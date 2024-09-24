@@ -12,7 +12,7 @@ reprehenderit aut at totam consequuntur autem delectus.
 </lc-card>
 
 <script setup lang="ts">
-    import {LcCard} from '@lichang666/lc-design-vue'
+    import {LcCard} from '@lichang666/design-vue'
 </script>
 
 ```vue
@@ -24,7 +24,7 @@ reprehenderit aut at totam consequuntur autem delectus.
   </lc-card>
 </template>
 <script setup lang="ts">
-  import { LcCard } from '@lichang666/lc-design-vue'
+  import { LcCard } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -55,7 +55,7 @@ Card阴影有三种选择 `aways` `hover` `never` ,默认为`aways`
   <lc-card shadow="never">never</lc-card>
 </template>
 <script setup lang="ts">
-  import { LcCard } from '@lichang666/lc-design-vue'
+  import { LcCard } from '@lichang666/design-vue'
 </script>
 ```
 
@@ -78,7 +78,7 @@ Card阴影有三种选择 `aways` `hover` `never` ,默认为`aways`
 </template>
 
 <script setup lang="ts">
-  import { LcCard } from '@lichang666/lc-design-vue'
+  import { LcCard } from '@lichang666/design-vue'
 </script>
 ```
 

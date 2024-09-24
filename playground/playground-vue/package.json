@@ -13,7 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@lichang666/lc-design-vue": "workspace:^",
+    "@lichang666/design-vue": "workspace:^",
     "@lichang666/utils": "workspace:^",
     "vue": "^3.4.29"
   },

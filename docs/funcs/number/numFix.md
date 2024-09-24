@@ -15,7 +15,7 @@ outline: deep
 
 #### 返回
 
-`boolean`
+`number`
 
 ```ts
 import { numFix } from '@lichang666/utils'

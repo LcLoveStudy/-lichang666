@@ -1,0 +1,170 @@
+@import '../../design/var.less';
+@--lc-input-font-size: calc(@--lc-font-size-base * 0.9);
+@--lc-input-color-font: lighten(@--lc-color-default, 20%);
+@--lc-input-color-placeholder: lighten(@--lc-color-default, 50%);
+@--lc-input-color-border-default: #ccc;
+@--lc-input-padding: 0 0.5rem;
+@--lc-input-textarea-padding: 0.3rem 0.5rem;
+@--lc-input-height: 2rem;
+@--lc-input-rounded: 3px;
+.lc-input {
+  width: 15rem;
+  min-width: 3rem;
+  height: @--lc-input-height;
+  line-height: @--lc-input-height;
+  display: inline-flex;
+  align-items: center;
+  font-size: @--lc-input-font-size;
+  color: @--lc-input-color-font;
+  &__wrapper {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: inline-flex;
+    background: @--lc-color-white;
+    border: 1px solid @--lc-input-color-border-default;
+    border-radius: @--lc-input-rounded;
+    transition: all 0.2s;
+    padding: @--lc-input-padding;
+    &:hover {
+      border: 1px solid darken(@--lc-input-color-border-default, 10%);
+      .lc-input__suffix .lc-input__clear {
+        opacity: 1;
+      }
+    }
+    &:has(.lc-input__inner:focus) {
+      border: 1px solid @--lc-color-primary;
+      box-shadow: 0 0 2px 1px rgba(@--lc-color-primary, 0.5);
+      .lc-input__suffix .lc-input__clear {
+        opacity: 1;
+      }
+    }
+    &:has(.lc-input__inner:disabled),
+    &:has(.lc-input__inner:read-only) {
+      cursor: not-allowed;
+      background: @--lc-border-color-gay;
+      box-shadow: 0 0 0 1px @--lc-input-color-border-default;
+      .lc-input__inner {
+        cursor: not-allowed;
+        color: @--lc-input-color-placeholder;
+      }
+      .lc-input__suffix .lc-icon {
+        cursor: not-allowed;
+      }
+    }
+    &:has(.lc-input__inner[type='textarea']) {
+      position: relative;
+      padding-right: 0;
+      height: auto;
+      min-height: @--lc-input-height;
+      .lc-input__suffix {
+        margin: 0;
+      }
+      .lc-input__count {
+        position: absolute;
+        color: @--lc-input-color-font;
+        right: 0;
+        line-height: 1;
+        bottom: calc(@--lc-input-font-size * -1.2);
+      }
+    }
+    .lc-input__suffix,
+    .lc-input__prefix {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: @--lc-input-color-border-default;
+      margin: 0 0.3rem;
+      .lc-icon {
+        width: @--lc-input-font-size;
+        height: @--lc-input-font-size;
+      }
+      .lc-input__pass {
+        cursor: pointer;
+      }
+      .lc-input__clear {
+        opacity: 0;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      .lc-input__count {
+        font-size: calc(@--lc-input-font-size * 0.9);
+      }
+    }
+  }
+  &__inner {
+    background: transparent;
+    height: 100%;
+    flex: 1;
+    border: none;
+    outline: none;
+    color: @--lc-input-color-font;
+    font-size: @--lc-input-font-size;
+    &::placeholder {
+      color: @--lc-input-color-placeholder;
+      font-size: @--lc-input-font-size;
+    }
+    &[type='password'] {
+      font-size: @--lc-font-size-base;
+      letter-spacing: 2px;
+    }
+    &[type='textarea'] {
+      padding: @--lc-input-textarea-padding;
+      min-height: @--lc-input-height;
+      line-height: 1.5;
+    }
+  }
+  &__append,
+  &__repend {
+    z-index: 1;
+    height: @--lc-input-height;
+    padding: @--lc-input-padding;
+    border: 1px solid @--lc-input-color-border-default;
+    background-color: lighten(@--lc-input-color-border-default, 10%);
+    .lc-button {
+      height: 100%;
+      border-radius: @--lc-input-rounded;
+    }
+    &:has(.lc-button) {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background-color: none;
+      &:hover {
+        z-index: 3;
+      }
+    }
+  }
+  &__append {
+    margin-left: -1px;
+    border-top-right-radius: @--lc-input-rounded;
+    border-bottom-right-radius: @--lc-input-rounded;
+    .lc-button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &__repend {
+    margin-right: -1px;
+    border-top-left-radius: @--lc-input-rounded;
+    border-bottom-left-radius: @--lc-input-rounded;
+    .lc-button {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &:has(.lc-input__append) {
+    .lc-input__wrapper {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &:has(.lc-input__repend) {
+    .lc-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
