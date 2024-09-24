@@ -1,4 +1,4 @@
-type FileDownloadOptions = {
+export type FileDownloadOptions = {
   url: string
   fileName: string
   error?: (error: ProgressEvent) => void
