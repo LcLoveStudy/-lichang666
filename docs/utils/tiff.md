@@ -31,11 +31,10 @@ pnpm add @lichang666/tiff
 
 ```vue
 <template>
-  <img ref="imgRef" class="img-example" />
+  <img ref="imgRef" />
 </template>
 
 <script lang="ts" setup>
-  import { ref, onMounted } from 'vue'
   import TestTiff from './bali.tif'
   import getTiffBase64 from '@lichang666/tiff'
   const imgRef = ref<HTMLImageElement>()
