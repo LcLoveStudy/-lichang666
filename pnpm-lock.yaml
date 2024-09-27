@@ -11,6 +11,9 @@ importers:
       '@lichang666/design-vue':
         specifier: workspace:^
         version: link:packages/components
+      '@lichang666/tiff':
+        specifier: workspace:^
+        version: link:packages/tiff
       '@lichang666/utils':
         specifier: workspace:^
         version: link:packages/utils
