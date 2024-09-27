@@ -21,13 +21,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: |
-          cd docs
-          pnpm install
-
-      - name: Build
-        run: pnpm docs:build
+      - name: Install dependencies and Build
+        run: pnpm install && pnpm docs:build
 
       - name: Inter Dist Folder
         run: cd ./docs/.vitepress && mv ./dist ../../
