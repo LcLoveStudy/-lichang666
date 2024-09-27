@@ -3,6 +3,9 @@ import { sidebar } from './sidebar.config'
 import { searchConfig } from './search.config'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    assetsInclude: ['**/*.tiff', '**/*.tif']
+  },
   lang: 'zh-CN',
   base: '/-lichang666/',
   title: '@lichang666/utils',
@@ -18,7 +21,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '函数列表', link: '/funcs/getting-started' },
-      { text: '组件库', link: '/components/getting-started' }
+      { text: '组件库', link: '/components/getting-started' },
+      { text: '其它工具', link: '/utils/tiff' }
     ],
 
     sidebar: sidebar,
