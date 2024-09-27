@@ -21,7 +21,12 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies and Build
+      - name: Install dependencies
+        run: |
+          cd docs
+          pnpm install
+
+      - name: Build
         run: pnpm docs:build
 
       - name: Inter Dist Folder
