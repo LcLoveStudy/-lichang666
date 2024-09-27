@@ -1,0 +1,22 @@
+{
+  "name": "@lichang666/tiff",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./index.ts",
+  "scripts": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "lc",
+    "tiff",
+    "typescript",
+    "ts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tiff.js": "^1.0.0"
+  }
+}
