@@ -16,6 +16,8 @@ pnpm add @lichang666/tiff
 
 ### 使用
 
+默认导出一个异步方法，将`TIFF`文件转换为`base64`格式。
+
 <img ref="imgRef" class="img-example" />
 
 <script lang="ts" setup>
