@@ -22,7 +22,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install dependencies and Build
-        run: pnpm build
+        run: pnpm docs:build
 
       - name: Inter Dist Folder
         run: cd ./docs/.vitepress && mv ./dist ../../

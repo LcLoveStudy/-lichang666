@@ -5,7 +5,6 @@
   "scripts": {
     "docs:dev": "vitepress dev ./",
     "docs:build": "vitepress build ./",
-    "build": "pnpm install && pnpm docs:build",
     "docs:preview": "vitepress preview ./"
   },
   "keywords": [],
