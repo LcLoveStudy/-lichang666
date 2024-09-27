@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@lichang666/design-vue": "workspace:^",
+    "@lichang666/tiff": "workspace:^",
     "@lichang666/utils": "workspace:^",
     "vue": "^3.4.29"
   },
