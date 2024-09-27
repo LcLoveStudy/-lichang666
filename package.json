@@ -10,6 +10,7 @@
   "dependencies": {
     "@lichang666/design-vue": "workspace:^",
     "@lichang666/utils": "workspace:^",
+    "@lichang666/tiff": "workspace:^",
     "prettier": "^3.3.2",
     "vitepress": "^1.3.0"
   }
