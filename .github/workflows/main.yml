@@ -22,16 +22,13 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install dependencies and Build
-        run: |
-          cd docs
-          pnpm install
-          pnpm build
+        run: pnpm docs:build
 
-      - name: Move Dist Folder
-        run: mv ./docs/.vitepress/dist ./dist
+      - name: Inter Dist Folder
+        run: cd ./docs/.vitepress && mv ./dist ../../
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.lichang666 }}
+          github_token: ${{ secrets.lichang666 }} # 此处修改为你的Secret名称
           publish_dir: ./dist
