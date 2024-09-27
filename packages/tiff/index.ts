@@ -1,5 +1,5 @@
 import 'tiff.js'
-export const showTif = async (url: string) => {
+const getTiffBase64 = async (url: string) => {
   const suffix = url.split('/')[url.split('/').length - 1]
   if (suffix.indexOf('tif')) {
     const response = await fetch(url)
@@ -9,3 +9,5 @@ export const showTif = async (url: string) => {
     return tiff.toDataURL()
   }
 }
+
+export default getTiffBase64
