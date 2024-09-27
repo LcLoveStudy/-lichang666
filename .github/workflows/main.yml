@@ -20,9 +20,6 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
-        
-      - name: Clear pnpm store
-        run: pnpm store prune
 
       - name: Install dependencies and Build
         run: pnpm docs:build
