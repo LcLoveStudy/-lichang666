@@ -1,22 +1,21 @@
 <template>
   <div class="playground">
-    <lc-input v-model="searchvalue" clearable>
-      <template #repend>
-        <!-- <lc-button :icon="SearchIcon" /> -->
-        http://
-      </template>
-      <template #append>
-        <lc-button>搜索</lc-button>
-        <!-- http:// -->
-      </template>
-    </lc-input>
+    <el-upload action="#" :auto-upload="false" :on-change="fileChange">
+      <el-button type="primary">Click to upload</el-button>
+    </el-upload>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { LcInput, SearchIcon, LcButton } from '@lichang666/design-vue'
-const searchvalue = ref('')
+import { imgToBase64 } from '@lichang666/utils'
+import { type UploadFile, ElUpload } from 'element-plus'
+const fileChange = async (uploadFile: UploadFile) => {
+  if (uploadFile?.raw) {
+    const base = await imgToBase64(uploadFile.raw)
+    console.log(base)
+  }
+}
 </script>
 
 <style scoped>

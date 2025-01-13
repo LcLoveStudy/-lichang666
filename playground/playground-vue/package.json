@@ -16,6 +16,7 @@
     "@lichang666/design-vue": "workspace:^",
     "@lichang666/tiff": "workspace:^",
     "@lichang666/utils": "workspace:^",
+    "element-plus": "^2.9.3",
     "vue": "^3.4.29"
   },
   "devDependencies": {
