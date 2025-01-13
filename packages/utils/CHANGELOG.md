@@ -1,3 +1,9 @@
+# 0.0.13
+
+### Feature
+
+- **imgToBase64:** add `imgToBase64` util ([<u>ae0364a</u>](https://github.com/LcLoveStudy/-lichang666/commit/f5ef26ae42d8f0f482cbc7129ad0a69a72e388dd#diff-f4df2ebc4521cdffad4c439ca275721a4eaee70de6b00162f729ab5d35e965ca))
+
 # 0.0.12
 
 ### Feature
