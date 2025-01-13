@@ -60,6 +60,9 @@ export default [
   },
   {
     text: 'File',
-    items: [{ text: 'fileDownload', link: '/funcs/file/fileDownload' }]
+    items: [
+      { text: 'fileDownload', link: '/funcs/file/fileDownload' },
+      { text: 'imgToBase64', link: '/funcs/file/imgToBase64' }
+    ]
   }
 ]
