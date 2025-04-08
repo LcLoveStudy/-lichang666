@@ -1,3 +1,9 @@
+# 0.0.14
+
+### Refactoring
+
+- **fileToBase64:** update `imgToBase64` to `fileToBase64` ([<u>5549bcf</u>](https://github.com/LcLoveStudy/-lichang666/commit/5549bcf311cfc086f0bb62331572ebb79e42c8ad))
+
 # 0.0.13
 
 ### Feature
