@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
     import {ref} from 'vue'
-    import {LcCard,LcInput,SearchIcon} from '@lichang666/design-vue'
+    import {LcCard,LcInput,SearchIcon} from '@lichang666/components'
     const baseValue = ref('')
     const clearValue = ref('')
     const password = ref('')
@@ -22,7 +22,7 @@
   <lc-input v-model="baseValue" />
 </template>
 <script setup lang="ts">
-  import { LcInput } from '@lichang666/design-vue'
+  import { LcInput } from '@lichang666/components'
   const baseValue = ref('')
 </script>
 ```
@@ -40,7 +40,7 @@
   <lc-input v-model="baseValue" disabled />
 </template>
 <script setup lang="ts">
-  import { LcInput } from '@lichang666/design-vue'
+  import { LcInput } from '@lichang666/components'
   const baseValue = ref('')
 </script>
 ```
@@ -57,7 +57,7 @@
   <lc-input v-model="clearValue" clearable />
 </template>
 <script setup lang="ts">
-  import { LcInput } from '@lichang666/design-vue'
+  import { LcInput } from '@lichang666/components'
   const clearValue = ref('')
 </script>
 ```
@@ -74,7 +74,7 @@
   <lc-input v-model="password" type="password" />
 </template>
 <script setup lang="ts">
-  import { LcInput } from '@lichang666/design-vue'
+  import { LcInput } from '@lichang666/components'
   const password = ref('')
 </script>
 ```
@@ -115,7 +115,7 @@
   </lc-input>
 </template>
 <script setup lang="ts">
-  import { LcInput, SearchIcon } from '@lichang666/design-vue'
+  import { LcInput, SearchIcon } from '@lichang666/components'
   const iconValue = ref('')
 </script>
 ```

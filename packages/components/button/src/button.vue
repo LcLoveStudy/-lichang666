@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
   import { useSlots } from 'vue'
-  import { LoadingIcon } from '@lichang666/design-vue'
+  import { LoadingIcon } from '@lichang666/components'
   import { buttonProps } from './button'
   import { customColorComputed } from './custom-color-computed'
   const props = defineProps(buttonProps)

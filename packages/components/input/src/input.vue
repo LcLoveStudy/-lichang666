@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-  import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon, LcButton } from '@lichang666/design-vue'
+  import { CloseFullIcon, ViewIcon, HideIcon, SearchIcon, LcButton } from '@lichang666/components'
   import { computed, ref, useSlots } from 'vue'
   import { unicodeSize } from '@lichang666/utils'
   import { inputProps } from './input'

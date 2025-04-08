@@ -1,5 +1,5 @@
 import { PropType } from 'vue'
-import { LcIconInstance } from '@lichang666/design-vue'
+import { LcIconInstance } from '@lichang666/components'
 
 export const inputProps = {
   placeholder: {
