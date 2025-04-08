@@ -66,7 +66,7 @@ export const inputProps = {
   },
   autocomplete: {
     type: String as PropType<'off' | 'on'>,
-    default: false
+    default: 'off'
   }
 }
 export type LcInputProps = Readonly<typeof inputProps>
