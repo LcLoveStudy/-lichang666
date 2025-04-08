@@ -1,2 +1,2 @@
 export * from './fileDownload'
-export * from './imgToBase64'
+export * from './fileToBase64'

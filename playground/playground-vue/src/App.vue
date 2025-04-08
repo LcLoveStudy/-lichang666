@@ -8,11 +8,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { imgToBase64 } from '@lichang666/utils'
+import { fileToBase64 } from '@lichang666/utils'
 import { type UploadFile, ElUpload } from 'element-plus'
 const fileChange = async (uploadFile: UploadFile) => {
   if (uploadFile?.raw) {
-    const base = await imgToBase64(uploadFile.raw)
+    const base = await fileToBase64(uploadFile.raw)
     console.log(base)
   }
 }
