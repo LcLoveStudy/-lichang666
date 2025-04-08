@@ -62,7 +62,7 @@ export default [
     text: 'File',
     items: [
       { text: 'fileDownload', link: '/funcs/file/fileDownload' },
-      { text: 'imgToBase64', link: '/funcs/file/imgToBase64' }
+      { text: 'fileToBase64', link: '/funcs/file/fileToBase64' }
     ]
   }
 ]
