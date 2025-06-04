@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { fileToBase64 } from '@lichang666/utils'
 import { type UploadFile, ElUpload } from 'element-plus'
 const fileChange = async (uploadFile: UploadFile) => {

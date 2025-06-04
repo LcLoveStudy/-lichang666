@@ -8,7 +8,6 @@
     "docs:build": "pnpm install && cd ./docs && pnpm vitepress build ./"
   },
   "dependencies": {
-    "@lichang666/components": "workspace:^",
     "@lichang666/tiff": "workspace:^",
     "@lichang666/utils": "workspace:^",
     "prettier": "^3.3.2",
