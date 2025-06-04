@@ -10,9 +10,6 @@ hero:
     - theme: brand
       text: 函数列表
       link: /funcs/getting-started
-    - theme: brand
-      text: 组件库
-      link: /components/getting-started
 
 features:
   - title: TypeScript编写

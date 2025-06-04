@@ -21,7 +21,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '函数列表', link: '/funcs/getting-started' },
-      { text: '组件库', link: '/components/getting-started' },
       { text: '其它工具', link: '/utils/tiff' }
     ],
 
