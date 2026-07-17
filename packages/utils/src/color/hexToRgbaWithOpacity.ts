@@ -15,9 +15,9 @@ export const hexToRgbaWithOpacity = (hex: string, opacityPercent: number) => {
     b = 0
   if (hex.length === 4) {
     // 处理3位缩写颜色
-    r = parseInt(hex[1] + hex[1], 16)
-    g = parseInt(hex[2] + hex[2], 16)
-    b = parseInt(hex[3] + hex[3], 16)
+    r = parseInt(hex.slice(1, 2).repeat(2), 16)
+    g = parseInt(hex.slice(2, 3).repeat(2), 16)
+    b = parseInt(hex.slice(3, 4).repeat(2), 16)
   } else if (hex.length === 7) {
     // 处理6位颜色
     r = parseInt(hex.substring(1, 3), 16)
